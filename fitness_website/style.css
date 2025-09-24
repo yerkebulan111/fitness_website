@@ -1,17 +1,23 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #F8FAFC;
+    color: #1E293B;
 }
 
+
+/* Header */
+
 header {
-    background: #222;
-    color: #fff;
+    background-color: #1E293B;
+    color: #F8FAFC;
     text-align: center;
     padding: 20px 0;
 }
+
+
+/* Navigation Bar */
 
 nav ul {
     list-style: none;
@@ -19,7 +25,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    background: #444;
+    background-color: #0F172A;
 }
 
 nav ul li {
@@ -28,7 +34,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #F8FAFC;
     font-weight: bold;
     padding: 10px;
     transition: color 0.3s ease;
@@ -38,33 +44,58 @@ nav ul li a:hover {
     color: #ff9800;
 }
 
+
+/* Main Content */
+
+main {
+  background-color: #F8FAFC;
+  color: #1E293B;
+}
+
 section {
     padding: 40px;
     text-align: center;
 }
 
 .container {
-    background: #fff;
+    background-color: #1E293B;
     border: 1px solid #ddd;
     border-radius: 10px;
+    color: white;
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
 }
 
+
+.trainingPrograms {
+    background-color: white;
+    border: solid;
+    border-radius: 10px;
+    height: 250px;
+    margin: 10px;
+    padding: 10px;
+    width: 15.625em;
+}
+
+
 #main-banner {
-    background: url('images/banner.jpg') no-repeat center center/cover;
-    color: #fff;
+    background-image: url('images/banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #ffffff;
     padding: 100px 20px;
     border-radius: 10px;
 }
+
 
 img {
     max-width: 100%;
     height: auto;
 }
 
-.rounded-img {
+.rounbded-img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -99,11 +130,8 @@ button:hover {
 }
 
 
-
-
 #trainers-hero {
     background: url('images/trainers-hero.jpg') no-repeat center center/cover;
-    color: #fff;
     padding: 80px 20px;
     text-align: center;
   }
@@ -154,48 +182,21 @@ button:hover {
   }
   
   .fade-in {
-    /* задержка можно задать, если хочешь */
+    
   }
+  
   
 
 
 
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Footer */ 
 
 footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+  background-color: #1E293B;
+  color: #F8FAFC;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
 }
