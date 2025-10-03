@@ -1,0 +1,85 @@
+/* Programs Page Styles */
+
+/*================= Side Bar ==============*/
+.layout-programs {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  grid-template-columns: 220px 1fr; /* sidebar + main content */
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+header { grid-area: header; }
+aside { grid-area: aside; background-color: #f4f4f4; padding: 20px; }
+main { grid-area: main; padding: 20px; }
+footer { grid-area: footer; }
+/* ============== Side Bar End==============*/
+
+/* Card Row */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;       /* wrap to next line if screen is small */
+    gap: 20px;             /* spacing between cards */
+    justify-content: center;
+}
+
+/* Individual Card */
+.container {
+    display: flex;
+    flex-direction: column; /* stack image + content vertically */
+    justify-content: space-between; /* push button to bottom */
+    align-items: center; /* center horizontally */
+    gap: 20px;
+    text-align: center;
+    background-color: #1E293B;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: white;
+    max-width: 300px;  /* optional: equal width for all cards */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
+}
+
+/* Hover effect for card */
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Card content: h2, p, button */
+.card-content {
+    display: flex;
+    flex-direction: column; /* stack h2, p, button */
+    justify-content: space-between; /* button at bottom */
+    height: 100%; /* take full height of container */
+    gap: 10px; /* space between text and button */
+}
+
+/* Images inside cards */
+.trainingPrograms {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+}
+
+/* Button inside card */
+.card-content button {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for button */
+.card-content button:hover {
+    background: #2c36c0;
+}
+
+
