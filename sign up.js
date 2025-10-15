@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmInput = document.getElementById("confirm");
   
     form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Останавливаем отправку формы
+      event.preventDefault(); 
   
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
       const password = passwordInput.value.trim();
       const confirm = confirmInput.value.trim();
   
-      // Проверяем поля одно за другим
+      
       if (name === "") {
         alert("Please enter your name.");
         nameInput.focus();
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
   
-      // Простая проверка формата email
+      
       const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
       if (!emailPattern.test(email)) {
         alert("Please enter a valid email address.");
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
   
-      // Если всё успешно:
+      
       alert("Registration successful!");
       form.reset();
     });

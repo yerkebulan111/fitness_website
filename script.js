@@ -1,6 +1,6 @@
 
 
-// pop up
+
 
 
 window.onload = function() {
@@ -8,7 +8,7 @@ window.onload = function() {
   const openPopup = document.getElementById('openPopup');
   const closeBtn = document.getElementById('closePopup');
 
-  // открыть форму
+  
   openPopup.onclick = function() {
     popup.style.display = 'flex';
   };
