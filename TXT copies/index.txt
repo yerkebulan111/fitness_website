@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Club</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    
-
 </head>
 <body>
     <header class="header-navbar">
@@ -20,14 +17,12 @@
 
             <nav>
             <ul>
-                <li><a href="sign up.html">Sign up</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="programs.html">Programs</a></li>
                 <li><a href="trainers.html">Trainers</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="more.html">More</a></li>
-                
             </ul>
             </nav>
         </div>
@@ -48,49 +43,14 @@
     <section class="container">
         <h2>About Us</h2>
         <p>Our fitness club offers modern equipment, expert trainers, and a friendly environment to help you achieve your fitness goals.</p>
-        <button id="openPopup" class="btn btn-primary">Try Now</button>
     </section>
 
     </main>
-
-
-    <div id="popup" class="popup">
-        <div class="popup-content">
-          <span id="closePopup" class="close">&times;</span>
-          <h2>Subscribe to Our Programs</h2>
-          <form>
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-   
-
-
-        </div>
-
-    </div>
-
-
-
-    <section class="datetime">
-        <h2>Currnet Date and Time</h2>
-        <p id="currentDateTime"></p>
-
-    </section>
-
-
-
-
-
-
 
 
 
     <footer>
         <p>Team members: Danial & Yerkebulan</p>
     </footer>
-
 </body>
 </html>

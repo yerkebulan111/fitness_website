@@ -16,7 +16,6 @@
 
         <nav>
             <ul>
-                <li><a href="sign up.html">Sign up</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="programs.html">Programs</a></li>
                 <li><a href="trainers.html">Trainers</a></li>
@@ -40,7 +39,7 @@
             <h3>Our Address</h3>
             <p>Astana IT University, Mangilik El Avenue, Astana, Kazakhstan</p>
             <p>Phone: +7 (777) 991-4648</p>
-            <p>Email: info@EagleFitnessClub.kz</p>
+            <p>Email: info@PhoenixRisingClub.kz</p>
         </section>
 
         <section>
@@ -63,9 +62,5 @@
     <footer>
         <p>Team Members: Danial & Yerkebulan</p>
     </footer>
-
-    
-    <script src="contact.js"></script>
-    
 </body>
 </html>

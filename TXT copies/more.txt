@@ -14,7 +14,6 @@
               <div class="logo">Fitness Club</div>
               <nav>
                 <ul>
-                  <li><a href="sign up.html">Sign up</a></li>
                   <li><a href="index.html">Home</a></li>
                   <li><a href="programs.html">Programs</a></li>
                   <li><a href="trainers.html">Trainers</a></li>
@@ -47,7 +46,7 @@
 
     <div class="cards">
         <div class="card">
-            <img src="images/programs/yoga.jpg" alt="yoga">
+            <img src="images/yoga2.jpg" alt="yoga">
             <h3>Yoga</h3>
             <p>Improve flexibility and reduce stress.</p>
             <button class="Joinbtn">Join</button>
