@@ -21,6 +21,7 @@
         
         <nav>
         <ul>
+            <li><a href="sign up.html">Sign up</a></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="programs.html">Programs</a></li>
             <li><a href="trainers.html">Trainers</a></li>
@@ -31,9 +32,12 @@
         </nav>
         </div>
 
+        <div class="title-and-button">
         <div class="page-title">
             <h1>Eagle Fitness Club: Programs</h1>
             <p>Choose the right fitness plan for you</p>
+        </div>
+        <button id="colorButton">Change Page Color 🎨</button>
         </div>
     </header>
 
@@ -50,6 +54,10 @@
 
     <p>Select what you want to see</p>
 
+    <br>
+
+    <h2>Current Date & Time</h2>
+    <p id="dateTime"></p>
     </aside>
 
     <main>
@@ -104,15 +112,46 @@
 
     </div>
 
-    
+    <section class="faq-section">
+  <h2>Frequently Asked Questions (FAQ)</h2>
+
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-question">How often should I work out each week?</button>
+      <div class="accordion-content">
+        <p>We recommend at least 3–5 sessions per week depending on your fitness goals.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-question">Do I need to bring my own equipment?</button>
+      <div class="accordion-content">
+        <p>No, all required equipment is available in our club.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-question">Are personal trainers included in the membership?</button>
+      <div class="accordion-content">
+        <p>Our premium plans include one-on-one personal training sessions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 </main>
 
 
-    <footer>
-        <!--Footer -->
-        <p>Team members: Danial & Yerkebulan</p>
-    </footer>
-    </div>
+<footer>
+    <!--Footer -->
+    <p>Team members: Danial & Yerkebulan</p>
+</footer>
+
+
+</div>
+
+<script src="programs.js"></script>
+
 </body>
 </html>

@@ -82,4 +82,52 @@ footer { grid-area: footer; }
     background: #2c36c0;
 }
 
+.faq-section {
+  margin: 40px auto;
+  width: 80%;
+  max-width: 700px;
+}
 
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-question {
+  background-color: #222;
+  color: #fff;
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.accordion-question:hover {
+  background-color: #444;
+}
+
+.accordion-content {
+  display: none;
+  padding: 15px;
+  background-color: #f8f8f8;
+  color: #333;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.accordion-question.active {
+  background-color: #e53935;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+#dateTime {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}

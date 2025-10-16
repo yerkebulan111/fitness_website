@@ -67,6 +67,50 @@ nav ul li a:hover {
   color: #ddd; 
 }
 
+/* Layout for page title + color button */
+.title-and-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;     
+  position: relative;          
+  padding: 20px;
+}
+
+
+#colorButton {
+  all: unset; /* resets inherited button styles */
+  position: absolute;
+  right: 40px;
+  background-color: #ff9800;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+
+#colorButton:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  #colorButton {
+    position: static;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
 /* ==================HEADER END================== */
 
 
