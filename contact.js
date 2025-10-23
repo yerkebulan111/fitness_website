@@ -45,4 +45,38 @@ function showError(text) {
     p.style.color = "red";
     document.querySelector("form").appendChild(p);
 }
+
+
+
+
+// fetch/Post
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Не обновлять страницу
+
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    
+    function showSuccessMessage() {
+        document.getElementById('successMessage').style.display = 'block';
+    }
+
+    
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-type': 'application/json; charset=UTF-8' }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Server response:', data);
+        showSuccessMessage(); 
+        document.getElementById('contactForm').reset(); 
+    })
+    .catch(error => console.error('Error:', error));
+});
+
     

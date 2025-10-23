@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
   
-      
+        
       const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
       if (!emailPattern.test(email)) {
         alert("Please enter a valid email address.");
@@ -63,4 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
     });
   });
+  
+
+
   
