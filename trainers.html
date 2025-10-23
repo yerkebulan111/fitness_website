@@ -6,6 +6,7 @@
   <title>Fitness Club — Trainers</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="trainers.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -19,8 +20,9 @@
     </div>
 <!-- d d-->
     
-    <nav>
+    <nav id="main-nav">
       <ul>
+        <li><a href="sign up.html">Sign up</a></li>
         <li><a href="index.html">Home</a></li>
         <li><a href="programs.html">Programs</a></li>
         <li><a href="trainers.html">Trainers</a></li>
@@ -31,9 +33,13 @@
     </nav>
     </div>
 
+    <div class="title-and-theme">
     <div class="page-title">
             <h1>Eagle Fitness Club: Trainers</h1>
-        </div>
+            <p>The real Professionals is here!</p>
+    </div>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </div>
   </header>
 
 
@@ -51,57 +57,152 @@
     </ul>
     <p> Select what you want to see </p>
 
-  </aside>
 
+    <section class="show-time">
+    <h3>Check the Current Time</h3>
+    <button id="showTimeBtn">Show Current Time</button>
+    <p id="currentTime"></p>
+    </section>
+
+  </aside>
+  
 
 
   <main>
   <!-- Main content-->
-  <section id="trainers-hero">
+  <section class="meet-trainers">
     <h2>Meet Our Trainers</h2>
     <p>Professional, passionate, ready to help you reach your goals.</p>
   </section>
 
-  <section class="trainers-grid">
-    <div class="trainer-card fade-in">
+    <section class="trainers-grid">
+
+    <div class="trainer-card-wrapper">
+    <div class="trainer-card">
       <img src="images/trainers/trainer1.jpg" alt="Trainer John Smith">
       <h3>John Smith</h3>
+        <div class="star-rating">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
       <p>Strength & Conditioning Coach</p>
+      <div class="trainer-more-info">
+        <p>John has over 10 years of experience helping athletes improve strength and endurance. 
+           He specializes in personalized training programs and injury prevention.</p>
+      </div>
       <button>Learn More</button>
+    </div> 
     </div>
-    <div class="trainer-card fade-in">
+
+    <div class="trainer-card-wrapper">
+    <div class="trainer-card">
       <img src="images/trainers/trainer2.jpg" alt="Trainer Maria Lopez">
       <h3>Maria Lopez</h3>
+      <div class="star-rating">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
       <p>Yoga & Wellness Instructor</p>
+      <div class="trainer-more-info">
+        <p>Maria is a certified yoga instructor with a focus on mindfulness and stress reduction. 
+           She helps clients improve flexibility and mental well-being through holistic programs.</p>
+      </div>
       <button>Learn More</button>
     </div>
-    <div class="trainer-card fade-in">
+    </div>
+    
+    <div class="trainer-card-wrapper">
+    <div class="trainer-card">
       <img src="images/trainers/trainer3.jpg" alt="Trainer David Kim">
       <h3>David Kim</h3>
+      <div class="star-rating">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
       <p>Boxing & Martial Arts Expert</p>
+      <div class="trainer-more-info">
+        <p>David has trained in various martial arts disciplines, including Muay Thai and boxing. 
+           He focuses on building discipline, coordination, and physical strength in his clients.</p>
+      </div>
       <button>Learn More</button>
     </div>
+    </div>
 
-    <div class="trainer-card fade-in">
+    <div class="trainer-card-wrapper">
+    <div class="trainer-card">
       <img src="images/trainers/trainer4.jpg" alt="Trainer Anya Grace">
       <h3>Anya Grace</h3>
+      <div class="star-rating">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
       <p>Yoga & Wellness Instructor</p>
+      <div class="trainer-more-info">
+        <p>Anya is passionate about mobility and body balance. 
+           Her sessions combine Pilates and dynamic stretching to improve posture and core strength.</p>
+      </div>
       <button>Learn More</button>
     </div>
-    <div class="trainer-card fade-in">
+    </div>
+
+    <div class="trainer-card-wrapper">
+    <div class="trainer-card">
       <img src="images/trainers/trainer5.jpg" alt="Trainer Ryan Blake">
       <h3>Ryan Blake</h3>
+      <div class="star-rating">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
       <p>Strength Training Coach</p>
+      <div class="trainer-more-info">
+        <p>Ryan specializes in muscle growth and advanced resistance training. 
+           He has designed numerous fitness programs for athletes and gym beginners alike.</p>
+      </div>
       <button>Learn More</button>
     </div>
-    <div class="trainer-card fade-in">
+    </div>
+
+    <div class="trainer-card-wrapper">
+    <div class="trainer-card">
       <img src="images/trainers/trainer6.jpg" alt="Trainer Jack Stone">
       <h3>Jack Stone</h3>
+      <div class="star-rating">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
       <p>Boxing Expert</p>
+      <div class="trainer-more-info">
+        <p>Jack is a former professional boxer with extensive experience in competitive fighting. 
+           He offers high-intensity training sessions focused on technique and endurance.</p> 
+      </div>
       <button>Learn More</button>
+      
     </div>
+
   </section>
 
+  
+<!-- Notification -->
+<div id="theme-notification" class="theme-notification"></div>
+<audio id="notif-sound" src="sounds/gaminglock.wav" preload="auto"></audio>
 
   
 
@@ -111,8 +212,11 @@
 
   <footer>
     <!--Footer -->
-    <p>Team Members: Danial & Yerkebulan</p>
+    <p>Team Members: Daniyal & Yerkebulan</p>
   </footer>
   </div>
+
+  <script src="trainers.js"></script>
+  <script src="keyboard-nav.js"></script>
 </body>
 </html>
