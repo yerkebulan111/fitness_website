@@ -1,4 +1,4 @@
-// Accordion behavior
+// ===== Accordion behavior =====
 const accordionHeaders = document.querySelectorAll('.accordion-question');
 
 accordionHeaders.forEach(header => {
@@ -28,7 +28,7 @@ const themes = [
   ['','','','',''],
   ['#FF8DA1','#FF9CE9','#FFC2BA','#AD56C4','#AD56C4'],
   ['#2E6F40','#68BA7F','#CFFFDC','#253D2C','#253D2C'],
-  ['#272757', '#505081', '#8686AC', '#0F0E47', '#0F0E47']
+  ['#272757', '#505081', '#8686AC', '#0F0E47', '#0F0E47'],
   ['#6A89a7', '#88BDF2', '#BDDDFC', '#384959','#6A89a7'],
   ['#1E3A8A', '#E0E7FF', '#F1F5F9', '#1E293B', '#0F172A'], 
   ['#B91C1C', '#FEE2E2', '#FEF2F2', '#7F1D1D', '#450A0A'], 
@@ -71,3 +71,26 @@ function updateDateTime() {
 // update once immediately, then every second
 updateDateTime();
 setInterval(updateDateTime, 1000);
+
+
+
+// ===== Greeting Message =====
+document.addEventListener("DOMContentLoaded", () => {
+  function displayGreeting() {
+    const now = new Date();
+    const hour = now.getHours(); // 0–23
+    let greeting = "";
+
+    if (hour >= 5 && hour < 12) {
+      greeting = "🌞 Good morning!";
+    } else if (hour >= 12 && hour < 18) {
+      greeting = "🌤️ Good afternoon!";
+    } else {
+      greeting = "🌙 Good evening!";
+    }
+
+    document.getElementById("greeting").textContent = greeting;
+  }
+
+  displayGreeting();
+});

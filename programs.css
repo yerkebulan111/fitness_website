@@ -18,6 +18,18 @@ main { grid-area: main; padding: 20px; }
 footer { grid-area: footer; }
 /* ============== Side Bar End==============*/
 
+
+/* ====== Greeting ====== */
+#greeting {
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 80px 20px;
+    text-align: center;
+    color: #1E293B;
+}
+
+
 /* Card Row */
 .card-row {
     display: flex;
