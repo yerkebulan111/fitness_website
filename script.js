@@ -44,7 +44,7 @@ function toggleTheme(){
   const hero = document.querySelector(".hero");
   const rating = document.querySelector(".rating-box");
   const icon = document.getElementById("icon");
-  const opheader = document.getElementById("opheader"); // ДОБАВИЛИ
+  const opheader = document.getElementById("opheader"); 
 
   if(body.style.backgroundColor === "black"){
       // LIGHT MODE
@@ -90,12 +90,18 @@ const langData = {
   }
 };
 
-document.getElementById('langSelect').addEventListener('change', function () {
-  const lang = this.value;
+document.getElementById('langSelect').addEventListener('change', function () {  // it works when user change value in our list
+  const lang = this.value;     // it's value of selected language
   document.getElementById('mainTitle').innerHTML = langData[lang].title;
   document.getElementById('subTitle').textContent = langData[lang].subtitle;
   document.getElementById('opheader').textContent = langData[lang].question;
 });
+
+
+
+
+
+// 7 assignment
 
 
 
