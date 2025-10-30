@@ -44,3 +44,114 @@
 .gallery1-item:hover span {
     opacity: 1;
 }
+
+
+/* State Section Styles */
+.stats-section {
+    margin: 60px auto;
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-radius: 20px;
+    max-width: 1200px;
+}
+
+.stats-title {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.stats-subtitle {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    border: 2px solid rgba(255, 152, 0, 0.2);
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 152, 0, 0.3);
+    background: rgba(255, 152, 0, 0.1);
+    border-color: #ff9800;
+}
+
+.stat-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-bottom: 10px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #e2e8f0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Add + symbol for large numbers */
+.stat-number::after {
+    content: '+';
+    font-size: 36px;
+    color: #ff9800;
+    margin-left: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .stats-title {
+        font-size: 32px;
+    }
+    
+    .stat-number {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+}

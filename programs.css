@@ -30,12 +30,13 @@ footer { grid-area: footer; }
 }
 
 
-/* Card Row */
+/* ===== Card Row ===== */
 .card-row {
     display: flex;
     flex-wrap: wrap;       /* wrap to next line if screen is small */
     gap: 20px;             /* spacing between cards */
     justify-content: center;
+    align-items: flex-start; /* ADD THIS - prevents cards from stretching */
 }
 
 /* Individual Card */
@@ -53,6 +54,7 @@ footer { grid-area: footer; }
     max-width: 300px;  /* optional: equal width for all cards */
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
+    align-self: flex-start; /* ADD THIS - each card controls its own height */
 }
 
 /* Hover effect for card */
@@ -68,6 +70,15 @@ footer { grid-area: footer; }
     justify-content: space-between; /* button at bottom */
     height: 100%; /* take full height of container */
     gap: 10px; /* space between text and button */
+    text-align: left;
+}
+
+.card-content h2 {
+    text-align: center;
+}
+
+.card-content .short-desc {
+    text-align: center;
 }
 
 /* Images inside cards */
@@ -86,6 +97,7 @@ footer { grid-area: footer; }
     font-weight: bold;
     padding: 10px;
     cursor: pointer;
+    border-radius: 5px;
     transition: background 0.3s ease;
 }
 
@@ -142,4 +154,119 @@ footer { grid-area: footer; }
     font-size: 16px;
     margin-top: 10px;
     font-weight: bold;
+}
+
+/* ========== SEARCH BAR STYLES ========== */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    position: relative;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+#searchInput:focus {
+    border-color: #ff9800;
+}
+
+/* Autocomplete Dropdown */
+#autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 5px;
+}
+
+.autocomplete-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Highlight style for search results */
+.highlight {
+    background-color: #ffeb3b;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* No results message */
+#noResults {
+    text-align: center;
+    font-size: 20px;
+    color: #999;
+    padding: 40px;
+    display: none;
+}
+
+/* More info section - hidden by default */
+.more-info {
+    margin-top: 10px;
+    text-align: left;
+    animation: fadeIn 0.4s ease-in-out;
+    display: none; /* ADD THIS - replaces inline style */
+}
+
+.more-info ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.more-info li {
+    margin-bottom: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Close button styling */
+.close-btn {
+    background: #e53935 !important;
+    display: none; /* ADD THIS - replaces inline style */
+}
+
+.close-btn:hover {
+    background: #c62828 !important;
+}
+
+.card-content {
+    text-align: left;
+}
+
+.card-content h2 {
+    text-align: center;
+}
+
+.card-content .short-desc {
+    text-align: center;
 }

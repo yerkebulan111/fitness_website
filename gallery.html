@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+        <div id="scroll-progress-bar"></div>
+    </div>
+
     <div class="layout">
 
     <header class="header-navbar">
@@ -28,6 +33,7 @@
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="more.html">More</a></li>
+            <li><a href="opinion.html">Opinion</a></li>
         </ul>
         </nav>
         </div>
@@ -51,6 +57,52 @@
     <main>
     <!-- Main content-->
     
+        <!-- Stat Section -->
+        <section class="stats-section">
+            <h2 class="stats-title">Our Achievements</h2>
+            <p class="stats-subtitle">Numbers that speak for themselves</p>
+                
+            <div class="stats-container">
+                    
+                <div class="stat-box">
+                    <div class="stat-icon">🏋️</div>
+                    <div class="stat-number" data-target="1500">0</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">💪</div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Professional Trainers</div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">Training Programs</div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Success Stories</div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">Classes Completed</div>
+                </div>
+
+            </div>
+        </section>
+
         <section class="gallery1">
             <div class="gallery1-item">
                 <img src="images/gallery/gallery1.jpg" alt="">
@@ -102,7 +154,9 @@
     </footer>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scroll-progress.js"></script>
     <script src="keyboard-nav.js"></script>
-
+    <script src="gallery.js"></script>
 </body>
 </html>
