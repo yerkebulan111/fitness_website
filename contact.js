@@ -175,7 +175,7 @@ function showNotification(message) {
       });
     }, 3000);
   }
-  
+  x 
   // Пример использования — при отправке формы:
   $('#contactForm').on('submit', function(e) {
     e.preventDefault();
