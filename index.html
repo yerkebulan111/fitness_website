@@ -1,32 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Club</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
-    
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mainpage</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress-container">
-        <div id="scroll-progress-bar"></div>
-    </div>
 
-    <header class="header-navbar">
-        <div class="top-bar">
-        <div class="logo">
-            <img src="images/eagle.png" alt="Fitness Logo">
-            </div>
 
-        
 
-            <nav  id="main-nav">
-            <ul>
-                <li><a href="sign up.html">Sign up</a></li>
+  <div class="banner">
+    <div class="navbar">
+      <ul>
+        <li><a href="sign up.html">Sign up</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="programs.html">Programs</a></li>
                 <li><a href="trainers.html">Trainers</a></li>
@@ -34,68 +21,46 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="more.html">More</a></li>
                 <li><a href="opinion.html">Opinion</a></li>
-                
-            </ul>
-            </nav>
-        </div>
+                <li><a href="our-merch.html">Our Merch</a></li>
 
-    <div class="page-title">
-            <h1>Eagle Fitness Club</h1>
-            <p>Your journey to a healthier life starts here!</p>
-        </div>
-    </header>
-
-    <main>
-
-    <section id="main-banner">
-        <h1>Welcome to Our Fitness Club</h1>
-        <p>Stay strong. Stay healthy. Stay motivated.</p>
-    </section>
-
-    <section class="container">
-        <h2>About Us</h2>
-        <p>Our fitness club offers modern equipment, expert trainers, and a friendly environment to help you achieve your fitness goals.</p>
-        <button id="openPopup" class="btn btn-primary">Try Now</button>
-    </section>
-
-    </main>
-
-
-    <div id="popup" class="popup">
-        <div class="popup-content">
-          <span id="closePopup" class="close">&times;</span>
-          <h2>Subscribe to Our Programs</h2>
-          <form>
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-
-
-      
-   
-
-
-        </div>
-
+       
+        
+      </ul>
     </div>
 
 
+    <div class="content">
 
 
-    
+      <h1>Eagle Fitness Club</h1>
+      <p>Our fitness club offers modern equipment, expert trainers, and a friendly <br> environment to help you achieve your fitness goals.</p>
+
+
+      <div>
+        <button id="openPopup" type="button" class="button"><span></span>Try Now</button>
+
+        </div>
+      </div>
+</div>
+
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h2>Subscribe to Our Programs</h2>
+      <form>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" placeholder="Enter your email" required><br><br>
+        <button type="submit" class="subscribe-btn">Subscribe</button>
+
+      </form>
+    </div>
+  </div>
 
 
 
 
 
-    
-
-
-
- 
 
 
 
@@ -103,14 +68,13 @@
 
 
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scroll-progress.js"></script>
+  <script src="keyboard-nav.js"></script>
+  <script src="script.js"></script>
 
 
-    <footer>
-        <p>Team members: Danial & Yerkebulan</p>
-    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scroll-progress.js"></script>
-    <script src="keyboard-nav.js"></script>
+  
 </body>
 </html>

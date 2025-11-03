@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Passwords do not match.");
       confirmInput.focus();
       return;
-    }
+    } 
 
     /* === Spinner & disable button === */
     submitBtn.disabled = true;
