@@ -1,3 +1,17 @@
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.innerHTML = `<span class="icon">✔</span> ${message}`;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("registerForm");
   const nameInput = document.getElementById("name");
@@ -62,10 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.innerHTML = `<span class="spinner"></span>Please wait...`;
 
     setTimeout(() => {
-      alert("Registration successful!");
+      showToast("Registration successful!");
       form.reset();
       submitBtn.disabled = false;
       submitBtn.innerHTML = "Sign up";
     }, 2000);
   });
 });
+
+
+// 7assignment 
+
+
+

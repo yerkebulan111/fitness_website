@@ -79,15 +79,22 @@
             
             <h2>Gallery</h2>
             <div class="gallery">
-              <div class="gallery-item"><img data-src="images/programs/gallery1.jpg" alt="hall 1"><span>1 hall</span></div>
-              <div class="gallery-item"><img data-src="images/programs/gallery2.jpg" alt="hall 2"><span>2 hall</span></div>
-              <div class="gallery-item"><img data-src="images/programs/gallery3.jpg" alt="hall 3"><span>3 hall</span></div>
-              <div class="gallery-item"><img data-src="images/programs/gallery4.jpg" alt="hall 4"><span>4 hall</span></div>
-              <div class="gallery-item"><img data-src="images/programs/gallery5.jpg" alt="hall 5"><span>5 hall</span></div>
-              <div class="gallery-item"><img data-src="images/programs/gallery6.jpg" alt="hall 6"><span>6 hall</span></div>
-              <div class="gallery-item"><img data-src="images/programs/gallery7.jpg" alt="hall 7"><span>7 hall</span></div>
-              <div class="gallery-item"><img data-src="images/programs/gallery8.jpg" alt="hall 8"><span>8 hall</span></div>
-              <div class="gallery-item"><img data-src="images/programs/gallery9.jpg" alt="hall 9"><span>9 hall</span></div>
+                <img src="images/placeholder.jpg" data-src="images/gallery1.jpg" alt="hall 1" class="lazy">
+                <img src="images/placeholder.jpg" data-src="images/gallery2.jpg" alt="hall 2" class="lazy">
+                <img src="images/placeholder.jpg" data-src="images/gallery3.jpg" alt="hall 3" class="lazy">
+                <img src="images/placeholder.jpg" data-src="images/gallery4.jpg" alt="hall 4" class="lazy">
+                <img src="images/placeholder.jpg" data-src="images/gallery5.jpg" alt="hall 5" class="lazy">
+                <img src="images/placeholder.jpg" data-src="images/gallery6.jpg" alt="hall 6" class="lazy">
+                <img src="images/placeholder.jpg" data-src="images/gallery7.jpg" alt="hall 7" class="lazy">
+                <img src="images/placeholder.jpg" data-src="images/gallery8.jpg" alt="hall 8" class="lazy">
+                <img src="images/placeholder.jpg" data-src="images/gallery9.jpg" alt="hall 9" class="lazy">
+              </div>
+              
+              
+            </div>
+            </div>
+
+
             </div>
             
       
@@ -101,30 +108,12 @@
 
     
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scroll-progress.js"></script>
     <script src="keyboard-nav.js"></script>
+    <script src="script.js"></script>
 
 
-<!-- lazy loading -->
-    <script>
-      $(document).ready(function () {
-        function lazyLoadImages() {
-          $('img[data-src]').each(function () {
-            const img = $(this);
-            const imgTop = img.offset().top;    
-            const scrollBottom = $(window).scrollTop() + $(window).height();
-    
-            if (imgTop < scrollBottom) {
-              img.attr('src', img.data('src'));
-              img.removeAttr('data-src');
-            }
-          });
-        }
-    
-        
-        $(window).on('scroll load', lazyLoadImages);
-      });
     </script>
     
     

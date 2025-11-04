@@ -1,7 +1,7 @@
 /* General Styles (used by all pages) */
 
 
-@import url();
+
 
 
 body {
@@ -732,4 +732,57 @@ nav ul {
   0% { transform: rotate(0deg); }
  100% { transform: rotate(360deg); }
 }
+
+/* 7-assignment */
+#toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #2ecc71; /* зелёный успех */
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(20px);
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#toast .icon {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+
+
+.gallery img {
+  width: 400px;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+  filter: blur(10px);
+  opacity: 0;
+  transition: filter 0.8s ease, opacity 0.8s ease;
+  border-radius: 15px;
+}
+
+.gallery img.visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+
+
+
 
