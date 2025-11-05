@@ -70,7 +70,7 @@
 
 /* Learn More Button */
 .trainer-card button {
-    background: #ff9800;
+    background: #a21208;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -95,6 +95,7 @@
   padding: 10px;
   border-radius: 8px;
   transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 
@@ -137,7 +138,7 @@
 }
 
 #showTimeBtn {
-  background-color: #0EA5E9;
+  background-color: #06557A;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -147,7 +148,8 @@
 }
 
 #showTimeBtn:hover {
-  background-color: #0284C7;
+  background-color: #9014A9;
+  scale: 1.1;
 }
 
 #currentTime {
@@ -181,4 +183,10 @@
 .theme-notification.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/*Night mode*/
+body.night #showTimeBtn {
+    border: 2px solid #fff;
 }

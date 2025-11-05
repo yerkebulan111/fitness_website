@@ -1,5 +1,6 @@
 /* Gallery 1 Styles */
 .gallery1 {
+    border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 15px; /* space between images */
@@ -46,6 +47,32 @@
 }
 
 
+@media (max-width: 1490px) {
+    .gallery1 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 15px;
+    }
+
+    /* .gallery1-item img {
+        height: 180px;
+    } */
+}
+
+
+@media (max-width: 930px) {
+    .gallery1 {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* .gallery1-item img {
+        height: 250px;  Taller on mobile for better viewing 
+    } */
+}
+
+
 /* State Section Styles */
 .stats-section {
     margin: 60px auto;
@@ -74,6 +101,7 @@
 
 .stats-container {
     display: grid;
+    flex-wrap: wrap;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     max-width: 1100px;
@@ -154,4 +182,14 @@
     .stats-container {
         grid-template-columns: 1fr;
     }
+}
+
+
+/* Night mode */
+body.night .stats-section {
+  border: 2px solid #ff9800;
+}
+
+body.night .gallery1 {
+  border: 2px solid #e2e8f0;
 }

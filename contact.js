@@ -39,7 +39,7 @@ $(document).ready(function(){
       }
   
       if (formValid) {
-          alert("Message sent successfully");
+          /*alert("Message sent successfully");*/
           document.querySelector("form").reset();
       }
   });
@@ -140,3 +140,52 @@ function showNotification(message) {
 
 
 
+// === Day/Night Theme Toggle with Local Storage ===
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("theme-toggle");
+  const notification = document.getElementById("theme-notification");
+  const sound = document.getElementById("notif-sound");
+
+  // check local storage on page load
+  const savedTheme = localStorage.getItem('theme');
+  
+  if (savedTheme === 'night') {
+    document.body.classList.add("night");
+    themeToggle.textContent = "☀️";
+  } else {
+    // Default to day mode
+    document.body.classList.remove("night");
+    themeToggle.textContent = "🌙";
+  }
+
+  // function to show popup notification
+  function showNotification(message) {
+    notification.textContent = message;
+    notification.classList.add("show");
+    sound.currentTime = 0; // restart sound
+    sound.play().catch(() => {}); // ignore autoplay errors
+    setTimeout(() => {
+      notification.classList.remove("show");
+    }, 2000);
+  }
+
+  // toggle theme on button click
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("night");
+
+    if (document.body.classList.contains("night")) {
+      themeToggle.textContent = "☀️";
+      showNotification("🌙 Night Mode Activated");
+      
+      // save to local storage
+      localStorage.setItem('theme', 'night');
+      
+    } else {
+      themeToggle.textContent = "🌙";
+      showNotification("☀️ Day Mode Activated");
+      
+      // save to local storage
+      localStorage.setItem('theme', 'day');
+    }
+  });
+});

@@ -36,12 +36,12 @@
           </nav>
         </div>
 
-        <div class="title-and-button">
+        <div class="title-and-theme">
           <div class="page-title">
             <h1>Eagle Fitness Club: Programs</h1>
             <p>Choose the right fitness plan for you</p>
           </div>
-          <button id="colorButton">Change Page Color 🎨</button>
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
         </div>
       </header>
 
@@ -49,15 +49,17 @@
         <!-- Sidebar content-->
         <h2>Our Programs</h2>
         <ul>
-          <li><a href="#">Cardio Training</a></li>
-          <li><a href="#">Strength Training</a></li>
-          <li><a href="#">Yoga & Flexibility</a></li>
-          <li><a href="#">Swimming</a></li>
-          <li><a href="#">Martial Arts</a></li>
-          <li><a href="#">HIIT Training</a></li>
-          <li><a href="#">Pilates</a></li>
-          <li><a href="#">CrossFit</a></li>
-          <li><a href="#">Dance Fitness</a></li>
+          <li><a href="#cardioCard">Cardio Training</a></li>
+          <li><a href="#strengthCard">Strength Training</a></li>
+          <li><a href="#yogaCard">Yoga & Flexibility</a></li>
+          <li><a href="#swimmingCard">Swimming</a></li>
+          <li><a href="#martialartsCard">Martial Arts</a></li>
+          <li><a href="#hiitCard">HIIT Training</a></li>
+          <li><a href="#pilatesCard">Pilates</a></li>
+          <li><a href="#crossfitCard">CrossFit</a></li>
+          <li><a href="#dancefitnessCard">Dance Fitness</a></li>
+          <br>
+          <li> <a href="#faqSection"> FAQs</a></li>
         </ul>
 
         <p>Select what you want to see</p>
@@ -66,6 +68,10 @@
 
         <h2>Current Date & Time</h2>
         <p id="dateTime"></p>
+
+        <br>
+
+        <button id="colorButton">Change Page Color 🎨</button>
       </aside>
 
       <main>
@@ -88,7 +94,7 @@
 
         <div class="card-row">
           <!-- Card 1: Cardio Training -->
-          <section class="container" data-program="cardio training endurance">
+          <section class="container" data-program="cardio training endurance" id="cardioCard">
             <img
               class="trainingPrograms"
               src="images/programs/cardio.jpg"
@@ -123,7 +129,7 @@
           </section>
 
           <!-- Card 2: Strength Training -->
-          <section class="container" data-program="strength training power">
+          <section class="container" data-program="strength training power" id="strengthCard">
             <img
               class="trainingPrograms"
               src="images/programs/strength.jpg"
@@ -161,6 +167,7 @@
           <section
             class="container"
             data-program="yoga flexibility mindfulness"
+            id="yogaCard"
           >
             <img
               class="trainingPrograms"
@@ -195,7 +202,7 @@
           </section>
 
           <!-- Card 4: Swimming  -->
-          <section class="container" data-program="swimming pool aqua">
+          <section class="container" data-program="swimming pool aqua" id="swimmingCard">
             <img
               class="trainingPrograms"
               src="images/programs/swim.jpg"
@@ -232,6 +239,7 @@
           <section
             class="container"
             data-program="martial arts boxing karate kickboxing"
+            id="martialartsCard"
           >
             <img
               class="trainingPrograms"
@@ -266,10 +274,10 @@
           </section>
 
           <!-- Card 6: HIIT Training -->
-          <section class="container" data-program="hiit interval intensity">
+          <section class="container" data-program="hiit interval intensity" id="hiitCard">
             <img
               class="trainingPrograms"
-              src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=400"
+              src="images/programs/hiit.jpg"
               alt="HIIT Training"
             />
             <div class="card-content">
@@ -300,10 +308,10 @@
           </section>
 
           <!-- Card 7: Pilates -->
-          <section class="container" data-program="pilates core balance">
+          <section class="container" data-program="pilates core balance" id="pilatesCard">
             <img
               class="trainingPrograms"
-              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400"
+              src="images/programs/pilates.jpg"
               alt="Pilates"
             />
             <div class="card-content">
@@ -337,10 +345,11 @@
           <section
             class="container"
             data-program="crossfit functional training strength"
+            id="crossfitCard"
           >
             <img
               class="trainingPrograms"
-              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400"
+              src="images/programs/crossfit2.jpg"
               alt="CrossFit"
             />
             <div class="card-content">
@@ -374,10 +383,11 @@
           <section
             class="container"
             data-program="dance fitness zumba aerobics"
+            id="dancefitnessCard"
           >
             <img
               class="trainingPrograms"
-              src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=400"
+              src="images/programs/dancefitness.jpg"
               alt="Dance Fitness"
             />
             <div class="card-content">
@@ -408,7 +418,7 @@
           </section>
         </div>
 
-        <section class="faq-section">
+        <section class="faq-section" id="faqSection">
           <h2>Frequently Asked Questions (FAQ)</h2>
 
           <div class="accordion">
@@ -515,6 +525,12 @@
             </div>
           </div>
         </section>
+
+
+        <!-- Notification -->
+        <div id="theme-notification" class="theme-notification"></div>
+        <audio id="notif-sound" src="sounds/gaminglock.wav" preload="auto"></audio>
+
       </main>
 
       <footer>

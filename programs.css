@@ -91,7 +91,7 @@ footer { grid-area: footer; }
 
 /* Button inside card */
 .card-content button {
-    background: #ff9800;
+    background: #a21208;
     color: #fff;
     border: none;
     font-weight: bold;
@@ -141,7 +141,7 @@ footer { grid-area: footer; }
 }
 
 .accordion-question.active {
-  background-color: #e53935;
+  background-color: #870FB3;
 }
 
 @keyframes fadeIn {
@@ -212,7 +212,8 @@ footer { grid-area: footer; }
 
 /* Highlight style for search results */
 .highlight {
-    background-color: #ffeb3b;
+    background-color: #ffc400;
+    color: rgb(10, 4, 86);
     padding: 2px 4px;
     border-radius: 3px;
     font-weight: bold;
@@ -251,12 +252,12 @@ footer { grid-area: footer; }
 
 /* Close button styling */
 .close-btn {
-    background: #e53935 !important;
+    background: #a21208 !important;
     display: none; /* ADD THIS - replaces inline style */
 }
 
 .close-btn:hover {
-    background: #c62828 !important;
+    background: #2c36c0 !important;
 }
 
 .card-content {
@@ -269,4 +270,9 @@ footer { grid-area: footer; }
 
 .card-content .short-desc {
     text-align: center;
+}
+
+/* Night mode */
+#greeting.night {
+    color: #ffd700;
 }

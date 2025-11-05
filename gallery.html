@@ -38,11 +38,13 @@
         </nav>
         </div>
 
+        <div class="title-and-theme">
         <div class="page-title">
             <h1>Eagle Fitness Club: Gallery</h1>
             <p>Explore our facilities and community</p>
         </div>
-
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </div>
     </header>
 
 
@@ -50,7 +52,10 @@
     <!-- Sidebar content-->
     <h2>Gallery Sections</h2>
     <ul>
-      <li><a href="#">Facilities</a></li>
+      <li><a href="#Achievements">Our Achievements 🏆</a></li>
+        <li><a href="#gallery1">Activities</a></li>
+    </ul>
+    <p> Select what you want to see </p>
     </aside>
 
 
@@ -58,7 +63,7 @@
     <!-- Main content-->
     
         <!-- Stat Section -->
-        <section class="stats-section">
+        <section class="stats-section" id="Achievements">
             <h2 class="stats-title">Our Achievements</h2>
             <p class="stats-subtitle">Numbers that speak for themselves</p>
                 
@@ -103,7 +108,7 @@
             </div>
         </section>
 
-        <section class="gallery1">
+        <section class="gallery1" id="gallery1">
             <div class="gallery1-item">
                 <img src="images/gallery/gallery1.jpg" alt="">
                 <span>Improve your endurance and burn calories on our state-of-the-art treadmill</span>
@@ -143,6 +148,10 @@
         </section>
 
 
+
+        <!-- Notification -->
+        <div id="theme-notification" class="theme-notification"></div>
+        <audio id="notif-sound" src="sounds/gaminglock.wav" preload="auto"></audio>
 
     </main>
 
