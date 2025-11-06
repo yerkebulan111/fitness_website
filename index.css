@@ -1,225 +1,295 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-
+/* ===================== BASE STYLES ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-
 
 .banner {
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("images/background.jpg");
-    background-size: cover;
-    background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-
-
+/* Navbar */
 .navbar {
-    width: 85%;
-    margin: auto;
-    padding: 35px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  padding: 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
 }
 
-
 .navbar ul li a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .navbar ul li::after {
-    content: '';
-    height: 3px;
-    width: 0;
-    background: #009688;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
+  content: '';
+  height: 3px;
+  width: 0;
+  background: #009688;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
 }
 
-
-.navbar ul li:hover::after{
-    width: 100%;
-
+.navbar ul li:hover::after {
+  width: 100%;
 }
 
-
-
+/* Content */
 .content {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: #fff;
-
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
 }
 
 .content h1 {
-
-    font-size: 50px;
-    margin-top: 80px;
+  font-size: 50px;
+  margin-top: 80px;
 }
 
 .content p {
-    margin: 20px auto;
-    font-weight: 100;
-    line-height: 25px;
-
+  margin: 20px auto;
+  font-weight: 100;
+  line-height: 25px;
 }
 
-
+/* Button */
 .button {
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px ;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px ;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #009688;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-
-span {
-    background: #009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
+.button span {
+  background: #009688;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
 }
-
 
 button:hover span {
-    width: 100%;
-
+  width: 100%;
 }
 
 button:hover {
-    border: none;
-    
+  border: none;
 }
 
-
-
-/* popup */
-
-
-
-/* Попап */
-/* --- POPUP STYLE --- */
+/* Popup */
 .popup {
-    display: none;
-    position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 0.3s ease-in-out;
+  display: none;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  width: 350px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+  color: #009688;
+}
+
+.popup-content label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+.popup-content input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #009688;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.popup-content input[type="email"]:focus {
+  border-color: #006f62;
+  box-shadow: 0 0 6px rgba(0,150,136,0.4);
+}
+
+.subscribe-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+  background-color: #007f72;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #555;
+  z-index: 9999;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===================== RESPONSIVE STYLES ===================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .navbar {
+      width: 90%;
+      padding: 25px 0;
   }
-  
+
+  .navbar ul li {
+      margin: 0 15px;
+  }
+
+  .content h1 {
+      font-size: 40px;
+  }
+
+  .content p {
+      font-size: 1.1rem;
+  }
+
+  .button {
+      width: 180px;
+      padding: 12px 0;
+  }
+
   .popup-content {
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
-    width: 350px;
-    position: relative;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    animation: slideUp 0.3s ease-in-out;
+      padding: 25px 30px;
+      width: 90%;
   }
-  
-  .popup-content h2 {
-    margin-bottom: 20px;
-    color: #009688;
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .navbar {
+      width: 95%;
+      padding: 20px 0;
   }
-  
-  .popup-content label {
-    display: block;
-    text-align: left;
-    margin-bottom: 8px;
-    color: #333;
-    font-weight: bold;
+
+  .navbar ul li {
+      margin: 0 10px;
   }
-  
-  .popup-content input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #009688;
-    border-radius: 6px;
-    outline: none;
-    transition: 0.3s;
+
+  .content h1 {
+      font-size: 32px;
   }
-  
-  .popup-content input[type="email"]:focus {
-    border-color: #006f62;
-    box-shadow: 0 0 6px rgba(0,150,136,0.4);
+
+  .content p {
+      font-size: 1rem;
   }
-  
-  .subscribe-btn {
-    margin-top: 15px;
-    width: 100%;
-    padding: 12px;
-    background-color: #009688;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
+
+  .button {
+      width: 160px;
+      padding: 10px 0;
   }
-  
-  .subscribe-btn:hover {
-    background-color: #007f72;
+
+  .popup-content {
+      width: 95%;
+      padding: 20px;
   }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    cursor: pointer;
-    font-size: 22px;
-    color: #555;
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .content h1 {
+      font-size: 24px;
   }
-  
-  .close:hover {
-    color: #000;
+
+  .content p {
+      font-size: 0.9rem;
   }
-  
-  /* --- ANIMATIONS --- */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+
+  .button {
+      width: 140px;
+      padding: 8px 0;
   }
-  
-  @keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+
+  .popup-content {
+      width: 95%;
+      padding: 15px;
   }
-  
+
+  .navbar ul li {
+      margin: 0 5px;
+  }
+}

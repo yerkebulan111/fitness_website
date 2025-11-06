@@ -1,79 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>opinion</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opinion</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body id="opbody">
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress-container">
-        <div id="scroll-progress-bar"></div>
+<body>
+  <nav class="navbar-fixed">
+    <img src="images/eagle.png" alt="logo" class="logo">
+
+    <ul>
+      <li><a href="sign up.html" data-i18n="navSignUp">Sign up</a></li>
+      <li><a href="index.html" data-i18n="navHome">Home</a></li>
+      <li><a href="programs.html" data-i18n="navPrograms">Programs</a></li>
+      <li><a href="trainers.html" data-i18n="navTrainers">Trainers</a></li>
+      <li><a href="gallery.html" data-i18n="navGallery">Gallery</a></li>
+      <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+      <li><a href="more.html" data-i18n="navMore">More</a></li>
+      <li><a href="opinion.html" class="active" data-i18n="navOpinion">Opinion</a></li>
+      <li><a href="our-merch.html" data-i18n="navMerch">Our Merch</a></li>
+    </ul>
+
+    <div class="nav-right">
+     
+      <img src="images/icons/moon.jpg" id="icon" onclick="toggleTheme()" alt="theme toggle">
+    </div>
+  </nav>
+
+  <section class="opinion">
+    <h1 data-i18n="heading">Share your impressions with us</h1>
+    <p data-i18n="subheading">We value your opinion. Tell us about your first training experience.</p>
+
+    <div class="reviews">
+      <div class="review">
+        <p data-i18n="review1">“Amazing energy and atmosphere. Trainers are very motivating.”</p>
+        <span data-i18n="reviewer1">- Alina</span>
+      </div>
+      <div class="review">
+        <p data-i18n="review2">“I was nervous at first, but now I enjoy every workout!”</p>
+        <span data-i18n="reviewer2">- Timur</span>
+      </div>
     </div>
 
-    <div class="hero">
-        <nav>
-            <img src="images/eagle.png" alt="logo">
-            <ul>
-                
-                <li><a href="sign up.html">Sign up</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="programs.html">Programs</a></li>
-                <li><a href="trainers.html">Trainers</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="more.html">More</a></li>
-                <li><a href="opinion.html">Opinion</a></li>
-                
-            </ul>
+    <h2 data-i18n="leaveFeedback">Leave your feedback</h2>
+    <form class="feedback-form">
+      <label for="name" data-i18n="name">Your name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" data-i18n-placeholder="placeholderName" required>
 
+      <label for="message" data-i18n="feedback">Your feedback:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your comment..." data-i18n-placeholder="placeholderMessage" required></textarea>
 
-
-            <select id="langSelect">
-                <option value="en">EN</option>
-                <option value="ru">RU</option>
-                <option value="kz">KZ</option>
-            </select>
-
-
-
-
-            <img src="images/icons/moon.jpg" id="icon" onclick="toggleTheme()">
-        </nav>
-
-        
-
-        <div class="info">
-            <h1 id="mainTitle">Share your <br> impressions with us</h1>
-            <p id="subTitle">How do you feel after your first training?</p>
-        </div>
-    </div>
-
-    
-
-
-
-   
-
-    <div class="rating-box">
-       <header id="opheader">How was your first training?</header>
-       <div class="stars">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        
-
-    </div>
-
-    </div>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scroll-progress.js"></script>
-    <script src="keyboard-nav.js"></script>
+      <button type="submit" data-i18n="button">Send</button>
+    </form>
+  </section>
 </body>
 </html>

@@ -19,73 +19,99 @@ window.onload = function() {
   }
 };
 
-// 6-assignment (rating stars)
-const stars = document.querySelectorAll(".stars i");
-if (stars.length > 0) {
-  stars.forEach((star, index1) => {
-    star.addEventListener("click", () => {
-      stars.forEach((s, index2) => {
-        index1 >= index2 ? s.classList.add("active") : s.classList.remove("active");
-      });
-    });
-  });
-}
 
-// light/Dark mod
+// --- DARK / LIGHT MODE ---
 function toggleTheme() {
-  const body = document.getElementById("opbody");
-  const hero = document.querySelector(".hero");
-  const rating = document.querySelector(".rating-box");
-  const icon = document.getElementById("icon");
-  const opheader = document.getElementById("opheader");
+  const body = document.body;
+  body.classList.toggle('dark-mode');
 
-  if (!body || !hero || !rating || !icon || !opheader) return;
-
-  if (body.style.backgroundColor === "black") {
-    body.style.backgroundColor = "white";
-    body.style.color = "black";
-    hero.style.backgroundColor = "white";
-    rating.style.backgroundColor = "white";
-    rating.style.color = "black";
-    icon.src = "images/icons/moon.jpg";
-  } else {
-    body.style.backgroundColor = "black";
-    body.style.color = "white";
-    hero.style.backgroundColor = "black";
-    rating.style.backgroundColor = "#222";
-    rating.style.color = "white";
-    icon.src = "images/icons/sun.jpg";
+  const icon = document.getElementById('icon');
+  if (icon) {
+    icon.src = body.classList.contains('dark-mode')
+      ? 'images/icons/sun.jpg'
+      : 'images/icons/moon.jpg';
   }
 }
 
-// translator
+// --- LANGUAGE SWITCHER ---
 const langSelect = document.getElementById('langSelect');
 if (langSelect) {
-  const langData = {
+  langSelect.addEventListener('change', () => {
+    const lang = langSelect.value;
+    translatePage(lang);
+  });
+}
+
+function translatePage(lang) {
+  const translations = {
     en: {
-      title: "Share your <br> impressions with us",
-      subtitle: "How do you feel after your first training?",
-      question: "How was your first training?"
+      heading: "Share your impressions with us",
+      subheading: "We value your opinion. Tell us about your first training experience.",
+      leaveFeedback: "Leave your feedback",
+      name: "Your name:",
+      feedback: "Your feedback:",
+      placeholderName: "Enter your name",
+      placeholderMessage: "Write your comment...",
+      button: "Send"
     },
     ru: {
-      title: "Поделитесь <br> своими впечатлениями",
-      subtitle: "Что вы чувствуете после первой тренировки?",
-      question: "Как прошла ваша первая тренировка?"
+      heading: "Поделитесь с нами своими впечатлениями",
+      subheading: "Мы ценим ваше мнение. Расскажите о вашем первом опыте тренировок.",
+      leaveFeedback: "Оставьте свой отзыв",
+      name: "Ваше имя:",
+      feedback: "Ваш отзыв:",
+      placeholderName: "Введите ваше имя",
+      placeholderMessage: "Напишите свой комментарий...",
+      button: "Отправить"
     },
     kz: {
-      title: "Әсерлеріңізбен <br> бөлісіңіз",
-      subtitle: "Алғашқы жаттығудан кейін қандай күйдесіз?",
-      question: "Алғашқы жаттығу қалай өтті?"
+      heading: "Бізбен өз әсеріңізбен бөлісіңіз",
+      subheading: "Біз сіздің пікіріңізді бағалаймыз. Алғашқы жаттығу тәжірибеңіз туралы айтыңыз.",
+      leaveFeedback: "Пікір қалдыру",
+      name: "Сіздің атыңыз:",
+      feedback: "Пікіріңіз:",
+      placeholderName: "Атыңызды енгізіңіз",
+      placeholderMessage: "Пікіріңізді жазыңыз...",
+      button: "Жіберу"
     }
   };
 
-  langSelect.addEventListener('change', function () {
-    const lang = this.value;
-    document.getElementById('mainTitle').innerHTML = langData[lang].title;
-    document.getElementById('subTitle').textContent = langData[lang].subtitle;
-    document.getElementById('opheader').textContent = langData[lang].question;
+  const opinionHeading = document.querySelector('.opinion h1');
+  const opinionSub = document.querySelector('.opinion p');
+  const feedbackForm = document.querySelector('.feedback-form');
+
+  if (opinionHeading && opinionSub && feedbackForm) {
+    opinionHeading.textContent = translations[lang].heading;
+    opinionSub.textContent = translations[lang].subheading;
+    feedbackForm.querySelector('h2').textContent = translations[lang].leaveFeedback;
+    const labelName = feedbackForm.querySelector('label[for="name"]');
+    const labelMsg = feedbackForm.querySelector('label[for="message"]');
+    if (labelName) labelName.textContent = translations[lang].name;
+    if (labelMsg) labelMsg.textContent = translations[lang].feedback;
+
+    const inputName = document.getElementById('name');
+    const inputMsg = document.getElementById('message');
+    if (inputName) inputName.placeholder = translations[lang].placeholderName;
+    if (inputMsg) inputMsg.placeholder = translations[lang].placeholderMessage;
+
+    const button = feedbackForm.querySelector('button');
+    if (button) button.textContent = translations[lang].button;
+  }
+}
+
+// --- OPTIONAL: prevent form submit for demo ---
+const feedbackForm = document.querySelector('.feedback-form');
+if (feedbackForm) {
+  feedbackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Feedback submitted!');
+    e.target.reset();
   });
 }
+
+
+
+
 
 
 
@@ -127,5 +153,16 @@ $(function() {
   lazyLoad(); // запускаем при загрузке страницы
 });
 
+
+
+// more.html join button
+$(document).ready(function() {
+  $(".Joinbtn, .card button").on("click", function() {
+    alert("You have successfully joined this program!");
+  });
+});
+
+
+// our-merch.html but now button
 
 
