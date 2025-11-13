@@ -1,3 +1,4 @@
+<!--programs.html-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,59 +14,95 @@
       <div id="scroll-progress-bar"></div>
     </div>
 
-    <div class="layout">
-      <header class="header-navbar">
-        <!--Header-->
-
-        <div class="top-bar">
-          <div class="logo">
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="index.html">
             <img src="images/eagle.png" alt="Fitness Logo" />
-          </div>
-
-          <nav id="main-nav">
-            <ul>
-              <li><a href="sign up.html">Sign up</a></li>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="programs.html">Programs</a></li>
-              <li><a href="trainers.html">Trainers</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="more.html">More</a></li>
-              <li><a href="opinion.html">Opinion</a></li>
-              <li><a href="our-merch.html">Our Merch</a></li>
-            </ul>
-          </nav>
+          </a>
         </div>
 
-        <div class="title-and-theme">
-          <div class="page-title">
-            <h1>Eagle Fitness Club: Programs</h1>
-            <p>Choose the right fitness plan for you</p>
-          </div>
-          <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </div>
-      </header>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
 
-      <aside>
-        <!-- Sidebar content-->
-        <h2>Our Programs</h2>
-        <ul>
-          <li><a href="#cardioCard">Cardio Training</a></li>
-          <li><a href="#strengthCard">Strength Training</a></li>
-          <li><a href="#yogaCard">Yoga & Flexibility</a></li>
-          <li><a href="#swimmingCard">Swimming</a></li>
-          <li><a href="#martialartsCard">Martial Arts</a></li>
-          <li><a href="#hiitCard">HIIT Training</a></li>
-          <li><a href="#pilatesCard">Pilates</a></li>
-          <li><a href="#crossfitCard">CrossFit</a></li>
-          <li><a href="#dancefitnessCard">Dance Fitness</a></li>
-          <br>
-          <li> <a href="#faqSection"> FAQs</a></li>
+        <nav id="main-nav">
+          <ul>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="our-merches.html">Our Merch</a></li>
+            <li><a href="gallery.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title">Our Programs</div>
+          <div class="sidebar-subtitle">Jump to Section</div>
+        </div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#cardioCard" class="active"
+              ><i class="fas fa-running"></i> Cardio Training</a
+            >
+          </li>
+          <li>
+            <a href="#strengthCard"
+              ><i class="fas fa-dumbbell"></i> Strength Training</a
+            >
+          </li>
+          <li>
+            <a href="#yogaCard"
+              ><i class="fas fa-spa"></i> Yoga & Flexibility</a
+            >
+          </li>
+          <li>
+            <a href="#swimmingCard"><i class="fas fa-swimmer"></i> Swimming</a>
+          </li>
+          <li>
+            <a href="#martialartsCard"
+              ><i class="fas fa-hand-rock"></i> Martial Arts</a
+            >
+          </li>
+          <li>
+            <a href="#hiitCard"><i class="fas fa-fire"></i> HIIT Training</a>
+          </li>
+          <li>
+            <a href="#pilatesCard"><i class="fas fa-heartbeat"></i> Pilates</a>
+          </li>
+          <li>
+            <a href="#crossfitCard"><i class="fas fa-weight"></i> CrossFit</a>
+          </li>
+          <li>
+            <a href="#dancefitnessCard"
+              ><i class="fas fa-music"></i> Dance Fitness</a
+            >
+          </li>
+          <li
+            style="
+              margin-top: 20px;
+              border-top: 1px solid rgba(255, 255, 255, 0.1);
+              padding-top: 20px;
+            "
+          >
+            <a href="#faqSection"
+              ><i class="fas fa-question-circle"></i> FAQs</a
+            >
+          </li>
         </ul>
 
-        <p>Select what you want to see</p>
-
-        <br />
+        <br>
 
         <h2>Current Date & Time</h2>
         <p id="dateTime"></p>
@@ -75,8 +112,21 @@
         <button id="colorButton">Change Page Color 🎨</button>
       </aside>
 
+      <!-- Sidebar Toggle Button -->
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
       <main>
-        <!-- Main content-->
+        <!-- Page Title -->
+        <div class="page-header">
+          <h1>Eagle Fitness Club: Programs</h1>
+          <p>Choose the right fitness plan for you</p>
+        </div>
 
         <p id="greeting"></p>
 
@@ -95,7 +145,11 @@
 
         <div class="card-row">
           <!-- Card 1: Cardio Training -->
-          <section class="container" data-program="cardio training endurance" id="cardioCard">
+          <section
+            class="container"
+            data-program="cardio training endurance"
+            id="cardioCard"
+          >
             <img
               class="trainingPrograms"
               src="images/programs/cardio.jpg"
@@ -130,7 +184,11 @@
           </section>
 
           <!-- Card 2: Strength Training -->
-          <section class="container" data-program="strength training power" id="strengthCard">
+          <section
+            class="container"
+            data-program="strength training power"
+            id="strengthCard"
+          >
             <img
               class="trainingPrograms"
               src="images/programs/strength.jpg"
@@ -202,15 +260,19 @@
             </div>
           </section>
 
-          <!-- Card 4: Swimming  -->
-          <section class="container" data-program="swimming pool aqua" id="swimmingCard">
+          <!-- Card 4: Swimming -->
+          <section
+            class="container"
+            data-program="swimming pool aqua"
+            id="swimmingCard"
+          >
             <img
               class="trainingPrograms"
               src="images/programs/swim.jpg"
-              alt="Swimming "
+              alt="Swimming"
             />
             <div class="card-content">
-              <h2>Swimming </h2>
+              <h2>Swimming</h2>
               <p class="short-desc">
                 Improve stamina and overall health with our swimming sessions
                 and aqua aerobics, available for all skill levels.
@@ -275,7 +337,11 @@
           </section>
 
           <!-- Card 6: HIIT Training -->
-          <section class="container" data-program="hiit interval intensity" id="hiitCard">
+          <section
+            class="container"
+            data-program="hiit interval intensity"
+            id="hiitCard"
+          >
             <img
               class="trainingPrograms"
               src="images/programs/hiit.jpg"
@@ -309,7 +375,11 @@
           </section>
 
           <!-- Card 7: Pilates -->
-          <section class="container" data-program="pilates core balance" id="pilatesCard">
+          <section
+            class="container"
+            data-program="pilates core balance"
+            id="pilatesCard"
+          >
             <img
               class="trainingPrograms"
               src="images/programs/pilates.jpg"
@@ -419,6 +489,7 @@
           </section>
         </div>
 
+        <!-- FAQ Section -->
         <section class="faq-section" id="faqSection">
           <h2>Frequently Asked Questions (FAQ)</h2>
 
@@ -532,84 +603,7 @@
         <div id="theme-notification" class="theme-notification"></div>
         <audio id="notif-sound" src="sounds/gaminglock.wav" preload="auto"></audio>
 
-
-
-
-        <!-- API -->
-
-
-        <section id="nutrition-section" style="text-align:center; margin:50px 0;">
-          <h2>Track your meal, improve your performance</h2>
-          <input type="text" id="food-input" placeholder="Enter a food (e.g., apple)" style="padding:10px; width:250px;">
-          <button id="check-btn" style="padding:10px 20px; background: #a21208; color:white; border:none; cursor:pointer;">
-            Check
-          </button>
-          <div id="nutrition-result" style="margin-top:20px; font-size:18px; color:white;"></div>
-        </section>
-
-
-
-
-
-        <script>
-          document.getElementById('check-btn').addEventListener('click', async () => {
-            const food = document.getElementById('food-input').value.trim();
-            if (!food) return alert('Please enter a food name.');
-        
-            const apiUrl = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(food)}&search_simple=1&action=process&json=1`;
-            const resultDiv = document.getElementById('nutrition-result');
-            resultDiv.textContent = 'Loading...';
-        
-            try {
-              const res = await fetch(apiUrl);
-              const data = await res.json();
-        
-              if (data.products && data.products.length > 0) {
-                const item = data.products[0];
-                const nutriments = item.nutriments || {};
-        
-                resultDiv.innerHTML = `
-                  <p><strong>${item.product_name || food}</strong> contains approximately:</p>
-                  <p>Calories: ${nutriments["energy-kcal"] || 'N/A'} kcal</p>
-                  <p>Protein: ${nutriments.proteins || 'N/A'} g</p>
-                  <p>Fat: ${nutriments.fat || 'N/A'} g</p>
-                  <p>Carbs: ${nutriments.carbohydrates || 'N/A'} g</p>
-                `;
-              } else {
-                resultDiv.textContent = 'Food not found. Try another item.';
-              }
-            } catch (error) {
-              resultDiv.textContent = 'Error fetching data. Please try again.';
-            }
-          });
-        </script>
-        
-        
-        
-        
-        
-        
-     
-
-
-
-
-
-
-
-
-
-
       </main>
-
-
-      
-
-
-
-
-
-
 
       <footer>
         <!--Footer -->
@@ -617,9 +611,30 @@
       </footer>
     </div>
 
+    <!-- Footer -->
+    <footer>
+      <p>Team members: Danial & Yerkebulan</p>
+    </footer>
+
+
+    <button
+      class="theme-toggle-btn"
+      id="themeToggleBtn"
+      aria-label="Toggle theme"
+    >
+      🌙
+    </button>
+    <!-- Theme notification container -->
+    <div id="theme-notification" class="theme-notification"></div>
+    <audio id="notif-sound" src="sounds/notify1.wav" preload="auto"></audio>
+    <script src="theme-toggle.js"></script>
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="scroll-progress.js"></script>
-    <script src="programs.js"></script>
     <script src="keyboard-nav.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="programs.js"></script>
+    <script src="menu-toggle.js"></script>
   </body>
 </html>

@@ -1,0 +1,157 @@
+<!--sign-up.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="sign-up.css">
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+        <div id="scroll-progress-bar"></div>
+    </div>
+
+  <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/eagle.png" alt="Fitness Logo" />
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="our-merches.html">Our Merch</a></li>
+            <li><a href="gallery.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <main>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Create Your Account</h2>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-line" id="progressLine"></div>
+            <div class="progress-step active" data-step="1">1</div>
+            <div class="progress-step" data-step="2">2</div>
+            <div class="progress-step" data-step="3">3</div>
+        </div>
+
+        <form id="signupForm">
+            <!-- Step 1: Name -->
+            <div class="form-step active" data-step="1">
+                <div class="step-description">
+                    Let's start with your name
+                </div>
+                <div class="form-group">
+                    <label for="name"> <p>Full Name</p></label>
+                    <input type="text" id="name" name="name" placeholder="John Doe">
+                    <span class="error-message" id="nameError">Please enter your name</span>
+                </div>
+            </div>
+
+            <!-- Step 2: Email -->
+            <div class="form-step" data-step="2">
+                <div class="step-description">
+                    We'll use your email to keep you updated
+                </div>
+                <div class="form-group">
+                    <label for="email"> <p>Email Address</p></label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com">
+                    <span class="error-message" id="emailError">Please enter a valid email address</span>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter"> <p>Would you like to receive news and offers via email? </p></label>
+                </div>
+            </div>
+
+            <!-- Step 3: Password -->
+            <div class="form-step" data-step="3">
+                <div class="step-description">
+                    Choose a strong password to secure your account
+                </div>
+                <div class="form-group">
+                    <label for="password"> <p>Password</p></label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                    <div class="password-strength">
+                        <div class="password-strength-bar"></div>
+                    </div>
+                    <div class="password-strength-text"></div>
+                    <div class="password-requirements">
+                        <p>Password must be at least 8 characters long and include uppercase, lowercase, and numbers</p>
+                    </div>
+                    <span class="error-message" id="passwordError">Please enter a valid password</span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword"><p>Confirm Password</p></label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                    <span class="error-message" id="confirmPasswordError">Passwords do not match</span>
+                </div>
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" class="btn btn-secondary btn-back" id="backBtn">Back</button>
+                <button type="button" class="btn btn-reset" id="resetBtn">Reset</button>
+                <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <div class="notification-icon">✓</div>
+            <div class="notification-text">
+                <div class="notification-title">Success!</div>
+                <div class="notification-message" id="notificationMessage"></div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+
+  <footer>
+    <p>Team Members: Daniyal & Yerkebulan</p>
+  </footer>
+
+  <button
+      class="theme-toggle-btn"
+      id="themeToggleBtn"
+      aria-label="Toggle theme"
+    >
+      🌙
+    </button>
+    <!-- Theme notification container -->
+    <div id="theme-notification" class="theme-notification"></div>
+    <audio id="notif-sound" src="sounds/notify1.wav" preload="auto"></audio>
+    <script src="theme-toggle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scroll-progress.js"></script>
+  <script src="keyboard-nav.js"></script>
+  <script src="sign-up.js"></script>
+<script src="menu-toggle.js"></script>
+</body>
+</html>
+
