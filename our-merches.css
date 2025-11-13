@@ -459,6 +459,7 @@ main {
 .product-footer {
   display: flex;
   justify-content: column;
+  flex-direction: column;
   gap: 15px;
   margin-top: auto;
   padding-top: 20px;
