@@ -34,3 +34,13 @@ body.night .container {
 body.night .container h2 {
   color: white;
 }
+
+@media screen and (max-width: 320px) {
+  .container {
+    margin-top: 180px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+
+}

@@ -213,3 +213,10 @@ body.night .trainer-more-info {
     background-color: rgb(40, 38, 38);
     color: #f1f5f9;
 }
+
+@media screen and (max-width: 320px) {
+  main {
+    margin-top: 100px;
+  }
+
+}

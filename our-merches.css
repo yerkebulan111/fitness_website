@@ -816,6 +816,15 @@ body.night .product-content .product-description
 
 /* Special fixes for 320px */
 @media (max-width: 320px) {
+
+  main {
+    margin-top: 140px;
+  }
+
+  .sidebar {
+    padding-top: 20px;
+  }
+
   .filter-system {
     padding: 10px;
   }
@@ -845,5 +854,13 @@ body.night .product-content .product-description
   .buy-btn {
     padding: 12px 20px;
     font-size: 13px;
+  }
+
+  .product-card {
+    width: 250px
+  }
+
+  .products-grid{
+    justify-content: center;
   }
 }

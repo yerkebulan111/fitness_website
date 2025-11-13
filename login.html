@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+      <div id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/eagle.png" alt="Fitness Logo" />
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="our-merches.html">Our Merch</a></li>
+            <li><a href="gallery.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="login-container">
+        <div class="login-header">
+          <h2>Welcome Back!</h2>
+          <p>Log in to your account to continue</p>
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            />
+            <span class="error-message" id="emailError"
+              >Please enter your email</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-input-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                id="togglePassword"
+                aria-label="Toggle password visibility"
+              >
+                <span class="eye-icon">👁️</span>
+              </button>
+            </div>
+            <span class="error-message" id="passwordError"
+              >Please enter your password</span
+            >
+          </div>
+
+          <!-- <div class="form-options">
+            <div class="remember-me">
+              <input type="checkbox" id="rememberMe" name="rememberMe" />
+              <label for="rememberMe">Remember me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div> -->
+
+          <button type="submit" class="btn btn-login" id="loginBtn">
+            Log In
+          </button>
+
+          <div class="signup-link">
+            <p>
+              Don't have an account? <a href="sign-up.html">Sign up here</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success Modal -->
+      <div class="modal" id="successModal">
+        <div class="modal-content">
+          <div class="modal-icon">✓</div>
+          <h3>Login Successful!</h3>
+          <p>Welcome back, <span id="userName"></span>!</p>
+          <p class="redirect-text">Redirecting to home page...</p>
+        </div>
+      </div>
+
+      <!-- Notification -->
+      <div class="notification" id="notification">
+        <div class="notification-content">
+          <div class="notification-icon" id="notificationIcon">✗</div>
+          <div class="notification-text">
+            <div class="notification-title" id="notificationTitle">Error</div>
+            <div class="notification-message" id="notificationMessage"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Team Members: Daniyal & Yerkebulan</p>
+    </footer>
+
+    <button
+      class="theme-toggle-btn"
+      id="themeToggleBtn"
+      aria-label="Toggle theme"
+    >
+      🌙
+    </button>
+    <!-- Theme notification container -->
+    <div id="theme-notification" class="theme-notification"></div>
+    <audio id="notif-sound" src="sounds/notify1.wav" preload="auto"></audio>
+
+    <script src="theme-toggle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scroll-progress.js"></script>
+    <script src="keyboard-nav.js"></script>
+    <script src="login.js"></script>
+    <script src="menu-toggle.js"></script>
+  </body>
+</html>

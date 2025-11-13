@@ -1108,7 +1108,6 @@ body.night aside {
 
 
 
-/* New Responsive*/
 /* Hamburger Menu Button */
 .menu-toggle {
   display: none;
@@ -1120,13 +1119,14 @@ body.night aside {
   z-index: 1001;
   position: relative;
   margin-left: auto; /* Push to right */
+  align-items: center;
 }
 
 .menu-toggle span {
-  width: 25px; /* Reduced from 30px */
-  height: 3px;
+  width: 18px; 
+  height: 2px;
   background-color: #f8fafc;
-  margin: 3px 0; /* Reduced from 4px */
+  margin: 3px 5px; 
   transition: all 0.3s ease;
   border-radius: 3px;
 }
@@ -1163,6 +1163,7 @@ body.night aside {
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 999;
+    margin-top: 10px;
   }
 
   #main-nav.active {
@@ -1179,8 +1180,8 @@ body.night aside {
 
   #main-nav li {
     width: 100%;
-    max-width: 400px; /* ADD THIS LINE */
-    text-align: center; /* ADD THIS LINE */
+    max-width: 400px; 
+    text-align: center; 
     border-bottom: 1px solid rgba(248, 250, 252, 0.1);
   }
 
@@ -1191,7 +1192,7 @@ body.night aside {
   #main-nav li a {
     display: block;
     padding: 18px 30px;
-    font-size: 18px;
+    font-size: 15px;
     width: 100%;
     text-align: center;
   }
@@ -1224,7 +1225,8 @@ body.night aside {
   }
 
   #main-nav {
-    top: 80px; 
+    top: 80px;
+    margin-top: 40px; 
   }
 
   #main-nav.active {
@@ -1237,7 +1239,7 @@ body.night aside {
   }
 
   .menu-toggle span {
-    width: 25px;
+    width: 18px;
   }
 }
 
@@ -1256,6 +1258,7 @@ body.night aside {
 
 /* Extra Small Screens - 320px */
 @media screen and (max-width: 320px) {
+
   /* Fix header to stay at top */
   header {
     position: fixed;
@@ -1282,12 +1285,13 @@ body.night aside {
   .menu-toggle {
     padding: 5px;
     margin-right: 0;
+    align-items: center;
   }
 
   .menu-toggle span {
     width: 18px;
     height: 2px;
-    margin: 2px 0;
+    margin: 3px 5px;
   }
 
   /* Add padding to body so content doesn't hide under fixed header */
@@ -1302,6 +1306,7 @@ body.night aside {
     right: 0;
     width: 100%;
     margin: 0;
+    margin-top: 40px;
   }
 
   #main-nav.active {
@@ -1332,6 +1337,7 @@ body.night aside {
     width: 220px;
     height: calc(100vh - 70px);
     left: -220px;
+    padding-top: 20px;
   }
 
   .sidebar.active {

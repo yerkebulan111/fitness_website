@@ -93,6 +93,23 @@ const formData = {
   confirmPassword: "",
 };
 
+// Local Storage functions
+function getRegisteredUsers() {
+  const users = localStorage.getItem("registeredUsers");
+  return users ? JSON.parse(users) : [];
+}
+
+function saveUserToLocalStorage(userData) {
+  const users = getRegisteredUsers();
+  users.push(userData);
+  localStorage.setItem("registeredUsers", JSON.stringify(users));
+}
+
+function isEmailRegistered(email) {
+  const users = getRegisteredUsers();
+  return users.some(user => user.email.toLowerCase() === email.toLowerCase());
+}
+
 // Update progress bar
 function updateProgressBar() {
   const progressLine = document.getElementById("progressLine");
@@ -268,6 +285,33 @@ function validatePassword() {
   return isValid;
 }
 
+// Password toggle functionality
+$("#togglePassword").on("click", function() {
+    const passwordInput = $("#password");
+    const eyeIcon = $(this).find(".eye-icon");
+    
+    if (passwordInput.attr("type") === "password") {
+        passwordInput.attr("type", "text");
+        eyeIcon.text("🙈");
+    } else {
+        passwordInput.attr("type", "password");
+        eyeIcon.text("👁️");
+    }
+});
+
+$("#toggleConfirmPassword").on("click", function() {
+    const passwordInput = $("#confirmPassword");
+    const eyeIcon = $(this).find(".eye-icon");
+    
+    if (passwordInput.attr("type") === "password") {
+        passwordInput.attr("type", "text");
+        eyeIcon.text("🙈");
+    } else {
+        passwordInput.attr("type", "password");
+        eyeIcon.text("👁️");
+    }
+});
+
 // Password strength indicator
 function checkPasswordStrength(password) {
   const strengthBar = document.querySelector(".password-strength-bar");
@@ -374,6 +418,12 @@ $("#signupForm").on("submit", function (e) {
   e.preventDefault();
 
   if (validatePassword()) {
+    // Check if email is already registered
+    if (isEmailRegistered(formData.email)) {
+      showNotification("This email is already registered. Please use a different email or log in.");
+      return;
+    }
+
     const submitBtn = $("#submitBtn");
     const originalText = submitBtn.html();
 
@@ -383,6 +433,19 @@ $("#signupForm").on("submit", function (e) {
 
     // Simulate server call
     setTimeout(function () {
+      // Create user object (excluding confirmPassword, storing only necessary data)
+      const userData = {
+        id: Date.now(), // Unique ID based on timestamp
+        name: formData.name,
+        email: formData.email,
+        newsletter: formData.newsletter,
+        password: formData.password, // In production, this should be hashed
+        registeredAt: new Date().toISOString()
+      };
+
+      // Save to Local Storage
+      saveUserToLocalStorage(userData);
+
       // Reset button
       submitBtn.prop("disabled", false);
       submitBtn.html(originalText);
@@ -390,13 +453,23 @@ $("#signupForm").on("submit", function (e) {
       // Show success notification
       showNotification("Congratulations! You have registered successfully!");
 
-      // Optional: Reset form after successful submission
+      console.log("User registered:", { name: userData.name, email: userData.email });
+      console.log("Total registered users:", getRegisteredUsers().length);
+
+      // Reset form after successful submission
       setTimeout(function () {
         $("#signupForm")[0].reset();
         currentStep = 1;
         displayStep(currentStep);
         $(".password-strength").removeClass("show");
         $(".password-strength-text").removeClass("show");
+        
+        // Clear formData object
+        formData.name = "";
+        formData.email = "";
+        formData.newsletter = false;
+        formData.password = "";
+        formData.confirmPassword = "";
       }, 2000);
     }, 2000);
   }

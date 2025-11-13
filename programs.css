@@ -407,6 +407,16 @@ body.night .accordion-question {
 
 /* Gallery - 320px specific */
 @media (max-width: 320px) {
+
+  main {
+    margin-top: 120px;
+  }
+
+  .sidebar header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .gallery1 {
     padding: 8px;
     gap: 10px;

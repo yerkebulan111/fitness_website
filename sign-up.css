@@ -15,6 +15,18 @@ main {
   padding: 40px;
   max-width: 500px;
   width: 100%;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .form-header {
@@ -26,6 +38,41 @@ main {
   color: #333;
   font-size: 28px;
   margin-bottom: 10px;
+}
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-wrapper input {
+    padding-right: 50px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    width: 30px;
+}
+
+.toggle-password:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.eye-icon {
+    display: inline-block;
+    line-height: 1;
 }
 
 .progress-bar {
@@ -315,6 +362,31 @@ main {
   }
 }
 
+/* Log in link*/
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.login-link p {
+    color: #666;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #5568d3;
+    text-decoration: underline;
+}
+
 .notification {
   position: fixed;
   top: 20px;
@@ -378,8 +450,8 @@ body.night main{
 }
 
 body.night .form-container {
-    background-color: rgb(68, 65, 65);
-    border: 3px solid  white;
+    background-color: #2d2d2d;
+    border: 2px solid  white;
     color: white;
 } 
 
@@ -387,4 +459,24 @@ body.night .form-header h2,
 body.night .step-description,
 body.night p {
     color: white;
+}
+
+body.night .form-group input[type="email"],
+body.night .form-group input[type="password"],
+body.night .form-group input[type="text"] {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: white;
+}
+
+body.night .form-group input:focus {
+    border-color: #667eea;
+    background-color: #404040;
+}
+
+@media screen and (max-width: 320px) {
+  main {
+    margin-top: 150px;
+  }
+
 }

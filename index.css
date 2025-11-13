@@ -581,8 +581,14 @@ body.night .advantage-card h3{
   }
 }
 
+
 /* Home - 320px specific */
 @media (max-width: 320px) {
+
+  main {
+    margin-top: 150px;
+  }
+
   .hero {
     height: 400px;
   }
