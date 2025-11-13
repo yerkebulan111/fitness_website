@@ -190,3 +190,26 @@
 body.night #showTimeBtn {
     border: 2px solid #fff;
 }
+
+body.night main {
+    background-color: black;
+    color: white;
+}
+
+body.night .meet-trainers p,
+body.night .meet-trainers h2,
+body.night .trainer-card p,
+body.night .trainer-card h3 {
+    color: white;
+}
+
+body.night .trainer-card {
+    background: rgb(68, 65, 65);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+body.night .trainer-more-info {
+    background-color: rgb(40, 38, 38);
+    color: #f1f5f9;
+}

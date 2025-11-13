@@ -1,5 +1,7 @@
 /* Programs Page Styles */
 
+/*change for FINAL*/
+
 /*================= Side Bar ==============*/
 .layout-programs {
   display: grid;
@@ -41,16 +43,17 @@ footer { grid-area: footer; }
 
 /* Individual Card */
 .container {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column; /* stack image + content vertically */
     justify-content: space-between; /* push button to bottom */
     align-items: center; /* center horizontally */
     gap: 20px;
     text-align: center;
-    background-color: #1E293B;
-    border: 1px solid #ddd;
+    background-color: white;
+    /*border: 1px solid #1E293B;*/
     border-radius: 10px;
-    color: white;
+    color: #1E293B;
     max-width: 300px;  /* optional: equal width for all cards */
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
@@ -59,7 +62,7 @@ footer { grid-area: footer; }
 
 /* Hover effect for card */
 .container:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
@@ -75,6 +78,7 @@ footer { grid-area: footer; }
 
 .card-content h2 {
     text-align: center;
+    color: #1E293B;
 }
 
 .card-content .short-desc {
@@ -106,6 +110,7 @@ footer { grid-area: footer; }
     background: #2c36c0;
 }
 
+/* ========== FAQ Section ========== */
 .faq-section {
   margin: 40px auto;
   width: 80%;
@@ -273,6 +278,34 @@ footer { grid-area: footer; }
 }
 
 /* Night mode */
-#greeting.night {
+body.night #greeting {
     color: #ffd700;
+}
+
+body.night main {
+    background-color: black;
+    color: white;
+}
+
+body.night .container {
+    background-color: rgb(68, 65, 65);
+    color: white;
+    border: 1px solid white;
+}
+
+body.night .container h2 {
+    color: white;
+}
+
+body.night .accordion-question {
+    background-color: rgb(68, 65, 65);
+    color: #ffd700;
+}
+
+body.night .accordion-question:hover {
+    background-color: blue;
+}
+
+body.night .accordion-question.active {
+    background-color: #870FB3;
 }
