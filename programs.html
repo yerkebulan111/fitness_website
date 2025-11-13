@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Club - Programs</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="programs.css" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+      <div id="scroll-progress-bar"></div>
+    </div>
+
+    <div class="layout">
+      <header class="header-navbar">
+        <!--Header-->
+
+        <div class="top-bar">
+          <div class="logo">
+            <img src="images/eagle.png" alt="Fitness Logo" />
+          </div>
+
+          <nav id="main-nav">
+            <ul>
+              <li><a href="sign up.html">Sign up</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="trainers.html">Trainers</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="more.html">More</a></li>
+              <li><a href="opinion.html">Opinion</a></li>
+              <li><a href="our-merch.html">Our Merch</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="title-and-theme">
+          <div class="page-title">
+            <h1>Eagle Fitness Club: Programs</h1>
+            <p>Choose the right fitness plan for you</p>
+          </div>
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </div>
+      </header>
+
+      <aside>
+        <!-- Sidebar content-->
+        <h2>Our Programs</h2>
+        <ul>
+          <li><a href="#cardioCard">Cardio Training</a></li>
+          <li><a href="#strengthCard">Strength Training</a></li>
+          <li><a href="#yogaCard">Yoga & Flexibility</a></li>
+          <li><a href="#swimmingCard">Swimming</a></li>
+          <li><a href="#martialartsCard">Martial Arts</a></li>
+          <li><a href="#hiitCard">HIIT Training</a></li>
+          <li><a href="#pilatesCard">Pilates</a></li>
+          <li><a href="#crossfitCard">CrossFit</a></li>
+          <li><a href="#dancefitnessCard">Dance Fitness</a></li>
+          <br>
+          <li> <a href="#faqSection"> FAQs</a></li>
+        </ul>
+
+        <p>Select what you want to see</p>
+
+        <br />
+
+        <h2>Current Date & Time</h2>
+        <p id="dateTime"></p>
+
+        <br>
+
+        <button id="colorButton">Change Page Color 🎨</button>
+      </aside>
+
+      <main>
+        <!-- Main content-->
+
+        <p id="greeting"></p>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search programs (e.g., Yoga, Cardio, Strength)..."
+            autocomplete="off"
+          />
+          <div id="autocomplete"></div>
+        </div>
+
+        <div id="noResults">No programs found matching your search.</div>
+
+        <div class="card-row">
+          <!-- Card 1: Cardio Training -->
+          <section class="container" data-program="cardio training endurance" id="cardioCard">
+            <img
+              class="trainingPrograms"
+              src="images/programs/cardio.jpg"
+              alt="Cardio Training"
+            />
+            <div class="card-content">
+              <h2>Cardio Training</h2>
+              <p class="short-desc">
+                Boost your endurance with our advanced cardio equipment and
+                group classes.
+              </p>
+
+              <!-- Hidden detailed info -->
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Treadmill and elliptical machines</li>
+                  <li>Cycling and spinning classes</li>
+                  <li>High-energy aerobics sessions</li>
+                  <li>Heart rate monitoring</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Improved cardiovascular health,
+                  increased stamina, weight loss, and better mood.
+                </p>
+                <p><strong>Duration:</strong> 45-60 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+
+          <!-- Card 2: Strength Training -->
+          <section class="container" data-program="strength training power" id="strengthCard">
+            <img
+              class="trainingPrograms"
+              src="images/programs/strength.jpg"
+              alt="Strength Training"
+            />
+            <div class="card-content">
+              <h2>Strength Training</h2>
+              <p class="short-desc">
+                Build muscles and improve power with weightlifting and
+                resistance programs designed for all fitness levels.
+              </p>
+
+              <!-- Hidden detailed info -->
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Free weights and resistance machines</li>
+                  <li>Personalized strength programs</li>
+                  <li>Group strength classes</li>
+                  <li>Professional trainer supervision</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Increased muscle mass, improved
+                  endurance, enhanced metabolism, and bone health.
+                </p>
+                <p><strong>Duration:</strong> 45-75 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+
+          <!-- Card 3: Yoga & Flexibility -->
+          <section
+            class="container"
+            data-program="yoga flexibility mindfulness"
+            id="yogaCard"
+          >
+            <img
+              class="trainingPrograms"
+              src="images/programs/yoga.jpg"
+              alt="Yoga & Flexibility"
+            />
+            <div class="card-content">
+              <h2>Yoga & Flexibility</h2>
+              <p class="short-desc">
+                Relax your mind and body with yoga and stretching classes
+                suitable for all levels, from beginner to advanced.
+              </p>
+
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Hatha and Vinyasa yoga sessions</li>
+                  <li>Guided stretching routines</li>
+                  <li>Breathing and meditation practice</li>
+                  <li>Flexible class schedules</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Better flexibility, reduced stress,
+                  improved posture, and enhanced mental focus.
+                </p>
+                <p><strong>Duration:</strong> 60 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+
+          <!-- Card 4: Swimming  -->
+          <section class="container" data-program="swimming pool aqua" id="swimmingCard">
+            <img
+              class="trainingPrograms"
+              src="images/programs/swim.jpg"
+              alt="Swimming "
+            />
+            <div class="card-content">
+              <h2>Swimming </h2>
+              <p class="short-desc">
+                Improve stamina and overall health with our swimming sessions
+                and aqua aerobics, available for all skill levels.
+              </p>
+
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Lap swimming and freestyle training</li>
+                  <li>Aqua aerobics classes</li>
+                  <li>Professional coaching sessions</li>
+                  <li>Access to sauna and showers</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Full-body workout, improved lung
+                  capacity, reduced stress on joints, and better endurance.
+                </p>
+                <p><strong>Duration:</strong> 30-60 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+
+          <!-- Card 5: Martial Arts -->
+          <section
+            class="container"
+            data-program="martial arts boxing karate kickboxing"
+            id="martialartsCard"
+          >
+            <img
+              class="trainingPrograms"
+              src="images/programs/boxing.jpg"
+              alt="Martial Arts"
+            />
+            <div class="card-content">
+              <h2>Martial Arts</h2>
+              <p class="short-desc">
+                Boost strength, focus, and confidence while learning
+                self-defense skills through boxing, karate, and kickboxing.
+              </p>
+
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Boxing, karate, and kickboxing sessions</li>
+                  <li>Self-defense and sparring practice</li>
+                  <li>Focus and discipline training</li>
+                  <li>Personalized guidance for all ages</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Improved strength, confidence,
+                  coordination, and mental discipline.
+                </p>
+                <p><strong>Duration:</strong> 60-90 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+
+          <!-- Card 6: HIIT Training -->
+          <section class="container" data-program="hiit interval intensity" id="hiitCard">
+            <img
+              class="trainingPrograms"
+              src="images/programs/hiit.jpg"
+              alt="HIIT Training"
+            />
+            <div class="card-content">
+              <h2>HIIT Training</h2>
+              <p class="short-desc">
+                High-Intensity Interval Training for maximum calorie burn and
+                improved cardiovascular fitness in minimal time.
+              </p>
+
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Short bursts of high-intensity exercises</li>
+                  <li>Bodyweight and resistance workouts</li>
+                  <li>Customizable training plans</li>
+                  <li>Heart rate monitoring</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Rapid fat burning, enhanced
+                  metabolism, improved stamina, and time-efficient workouts.
+                </p>
+                <p><strong>Duration:</strong> 20-40 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+
+          <!-- Card 7: Pilates -->
+          <section class="container" data-program="pilates core balance" id="pilatesCard">
+            <img
+              class="trainingPrograms"
+              src="images/programs/pilates.jpg"
+              alt="Pilates"
+            />
+            <div class="card-content">
+              <h2>Pilates</h2>
+              <p class="short-desc">
+                Strengthen your core, improve posture, and increase flexibility
+                with controlled movements and breathing techniques.
+              </p>
+
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Mat and reformer-based sessions</li>
+                  <li>Core strengthening and flexibility routines</li>
+                  <li>Posture and breathing training</li>
+                  <li>Certified instructor support</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Improved posture, stronger core,
+                  better flexibility, and reduced back pain.
+                </p>
+                <p><strong>Duration:</strong> 45-60 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+
+          <!-- Card 8: CrossFit -->
+          <section
+            class="container"
+            data-program="crossfit functional training strength"
+            id="crossfitCard"
+          >
+            <img
+              class="trainingPrograms"
+              src="images/programs/crossfit2.jpg"
+              alt="CrossFit"
+            />
+            <div class="card-content">
+              <h2>CrossFit</h2>
+              <p class="short-desc">
+                Intense functional training combining weightlifting, cardio, and
+                gymnastics for total body conditioning and strength.
+              </p>
+
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Functional movement workouts</li>
+                  <li>Olympic lifting sessions</li>
+                  <li>High-intensity WODs (Workouts of the Day)</li>
+                  <li>Performance tracking system</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Increased power, endurance,
+                  mobility, and overall strength.
+                </p>
+                <p><strong>Duration:</strong> 45-60 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+
+          <!-- Card 9: Dance Fitness -->
+          <section
+            class="container"
+            data-program="dance fitness zumba aerobics"
+            id="dancefitnessCard"
+          >
+            <img
+              class="trainingPrograms"
+              src="images/programs/dancefitness.jpg"
+              alt="Dance Fitness"
+            />
+            <div class="card-content">
+              <h2>Dance Fitness</h2>
+              <p class="short-desc">
+                Have fun while burning calories with energetic Zumba and dance
+                aerobics classes set to upbeat music.
+              </p>
+
+              <div class="more-info" style="display: none">
+                <p><strong>What's Included:</strong></p>
+                <ul>
+                  <li>Zumba and Latin dance workouts</li>
+                  <li>Cardio-based dance routines</li>
+                  <li>Fun group environment</li>
+                  <li>Certified dance instructors</li>
+                </ul>
+                <p>
+                  <strong>Benefits:</strong> Improved coordination, stress
+                  relief, better stamina, and enjoyable weight loss.
+                </p>
+                <p><strong>Duration:</strong> 45-60 minutes per session</p>
+              </div>
+
+              <button class="learn-more-btn">Learn More</button>
+              <button class="close-btn" style="display: none">Close</button>
+            </div>
+          </section>
+        </div>
+
+        <section class="faq-section" id="faqSection">
+          <h2>Frequently Asked Questions (FAQ)</h2>
+
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-question">
+                How often should I work out each week?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  We recommend at least 3–5 sessions per week depending on your
+                  fitness goals. For weight loss, aim for 4-5 sessions. For
+                  maintenance, 3 sessions are sufficient.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-question">
+                Do I need to bring my own equipment?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  No, all required equipment is available in our club including
+                  weights, yoga mats, resistance bands, and cardio machines.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-question">
+                Are personal trainers included in the membership?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Our premium plans include one-on-one personal training
+                  sessions with certified trainers who create customized workout
+                  programs.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-question">
+                What are the gym operating hours?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  We're open Monday to Friday from 6:00 AM to 10:00 PM, and
+                  weekends from 8:00 AM to 8:00 PM. Holiday hours may vary.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-question">
+                Can I freeze my membership?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Yes, you can freeze your membership for up to 3 months per
+                  year for medical reasons or extended travel with proper
+                  documentation.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-question">
+                Is there a trial session available?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Absolutely! We offer a free 1-day trial pass so you can
+                  experience our facilities, equipment, and classes before
+                  committing to a membership.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-question">
+                What should I wear to the gym?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Wear comfortable athletic clothing and proper athletic shoes.
+                  For yoga and pilates, we recommend fitted clothing. Lockers
+                  and showers are available.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-question">
+                Do you offer nutrition guidance?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Yes! Our premium memberships include consultations with
+                  certified nutritionists who can create personalized meal plans
+                  to support your fitness goals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Notification -->
+        <div id="theme-notification" class="theme-notification"></div>
+        <audio id="notif-sound" src="sounds/gaminglock.wav" preload="auto"></audio>
+
+      </main>
+
+      <footer>
+        <!--Footer -->
+        <p>Team members: Danial & Yerkebulan</p>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scroll-progress.js"></script>
+    <script src="programs.js"></script>
+    <script src="keyboard-nav.js"></script>
+  </body>
+</html>

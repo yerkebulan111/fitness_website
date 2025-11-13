@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-more</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+
+        <header>
+            <div class="navbar">
+              <div class="logo">Fitness Club</div>
+              <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="programs.html">Programs</a></li>
+                  <li><a href="trainers.html">Trainers</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="more.html">More</a></li>
+                </ul>
+              </nav>
+            </div>
+    </header>
+
+
+    
+
+    <aside>
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a class="delline" href="#">Schedule </a></li>
+            <li><a class="delline" href="#">Trainers</a></li>
+            <li><a class="delline" href="#">Membership</a></li>
+        </ul>
+    </aside>
+
+ 
+  <main>
+    <h2>Our Programs</h2>
+
+
+    
+
+    <div class="cards">
+        <div class="card">
+            <img src="images/yoga2.jpg" alt="yoga">
+            <h3>Yoga</h3>
+            <p>Improve flexibility and reduce stress.</p>
+            <button class="Joinbtn">Join</button>
+            </div>
+            <div class="card">
+                <img src="images/programs/crossfit.jpg" alt="CrossFit">
+                <h3>CrossFit</h3>
+                <p>High intensity workouts for strength.</p>
+                <button>Join</button>
+              </div>
+              <div class="card">
+                <img src="images/programs/zumba.jpg" alt="Zumba">
+                <h3>Zumba</h3>
+                <p>Fun dance-based fitness classes.</p>
+                <div class="Joinbtn">
+                    <button>Join</button>
+                </div>
+                <!-- df -->
+              </div>
+            </div>
+      
+            
+            <h2>Gallery</h2>
+            <div class="gallery">
+              <div class="gallery-item"><img src="images/programs/gallery1.jpg"><span>1 hall</span></div>
+              <div class="gallery-item"><img src="images/programs/gallery2.jpg"><span>2-hall</span></div>
+              <div class="gallery-item"><img src="images/programs/gallery3.jpg"><span>3-hall</span></div>
+              <div class="gallery-item"><img src="images/programs/gallery4.jpg"><span>4-hall</span></div>
+              <div class="gallery-item"><img src="images/programs/gallery5.jpg"><span>5-hall</span></div>
+              <div class="gallery-item"><img src="images/programs/gallery6.jpg"><span>6-hall</span></div>
+              <div class="gallery-item"><img src="images/programs/gallery7.jpg"><span>7-hall</span></div>
+              <div class="gallery-item"><img src="images/programs/gallery8.jpg"><span>8-hall</span></div>
+              <div class="gallery-item"><img src="images/programs/gallery9.jpg"><span>9-hall</span></div>
+            </div>
+          </main>
+      
+          
+          <footer>
+            <p>Danial & [Yerkebulan].</p>
+          </footer>
+   
+
+
+
+    
+
+   
+    
+    
+</body>
+</html>
