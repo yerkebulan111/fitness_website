@@ -1,0 +1,36 @@
+/* contact.css*/ 
+.container {
+  background-color: white;
+  color: #0f172a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.container h2 {
+  color: #0f172a;
+}
+
+input, textarea {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input:focus, textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input.error {
+  border-color: #f44336;
+}
+
+body.night .container {
+  background-color: rgb(68, 65, 65);
+  color: white;
+}
+
+body.night .container h2 {
+  color: white;
+}

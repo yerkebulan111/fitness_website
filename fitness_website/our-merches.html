@@ -1,0 +1,357 @@
+<!--our-merches.html-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Club - Our Merch</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="our-merches.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+      <div id="scroll-progress-bar"></div>
+    </div>
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="index2.html">
+            <img src="images/eagle.png" alt="Fitness Logo" />
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="our-merches.html">Our Merch</a></li>
+            <li><a href="gallery.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title">Our Products</div>
+          <div class="sidebar-subtitle">Shop Now</div>
+        </div>
+        <ul class="sidebar-menu">
+          <li><a href="#all"><i class="fas fa-shopping-bag"></i> All Products</a></li>
+          <li><a href="#wears"><i class="fas fa-tshirt"></i> Sport Wear</a></li>
+          <li><a href="#equipment"><i class="fas fa-dumbbell"></i> Equipment</a></li>
+          <li><a href="#accessories"><i class="fas fa-hat-cowboy"></i> Accessories</a></li>
+        </ul>
+      </aside>
+      <!-- Sidebar Toggle Button -->
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+      <!-- Main Content -->
+      <main>
+        <!-- Search Bar -->
+        <div class="search-section">
+          <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input 
+              type="text" 
+              id="searchInput" 
+              class="search-input" 
+              placeholder="Search for products..." 
+              autocomplete="off"
+            />
+            <button id="clearSearch" class="clear-search">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div id="searchSuggestions" class="search-suggestions"></div>
+        </div>
+
+        <!-- Filter System -->
+        <div class="filter-system">
+          <!-- Category Filter -->
+          <div class="category-filter">
+            <button class="category-btn active" data-category="all">
+              <i class="fas fa-th"></i>
+              <span>All</span>
+            </button>
+            <button class="category-btn" data-category="wears">
+              <i class="fas fa-tshirt"></i>
+              <span>Sport Wear</span>
+            </button>
+            <button class="category-btn" data-category="equipment">
+              <i class="fas fa-dumbbell"></i>
+              <span>Equipment</span>
+            </button>
+            <button class="category-btn" data-category="accessories">
+              <i class="fas fa-hat-cowboy"></i>
+              <span>Accessories</span>
+            </button>
+          </div>
+
+          <!-- Price Range Filter -->
+          <div class="price-range-filter">
+            <h3 class="filter-title">Price Range</h3>
+            <div class="price-slider-container">
+              <div class="price-values">
+                <span class="price-value" id="minPriceDisplay">$0</span>
+                <span class="price-value" id="maxPriceDisplay">$150</span>
+              </div>
+              <div class="slider-wrapper">
+                <div class="slider-track" id="sliderTrack"></div>
+                <input 
+                  type="range" 
+                  id="minPrice" 
+                  class="price-slider" 
+                  min="0" 
+                  max="150" 
+                  value="0" 
+                  step="5"
+                />
+                <input 
+                  type="range" 
+                  id="maxPrice" 
+                  class="price-slider" 
+                  min="0" 
+                  max="150" 
+                  value="150" 
+                  step="5"
+                />
+              </div>
+              <div class="price-inputs">
+                <div class="price-input-group">
+                  <label>From ($)</label>
+                  <input type="number" id="minPriceInput" class="price-input" value="0" min="0" max="150" />
+                </div>
+                <div class="price-input-group">
+                  <label>To ($)</label>
+                  <input type="number" id="maxPriceInput" class="price-input" value="150" min="0" max="150" />
+                </div>
+              </div>
+              <button class="apply-filter-btn" id="applyFilter">
+                <i class="fas fa-check"></i> Apply Filter
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Section -->
+        <section id="merch-section" class="merch-section">
+          <div class="results-info">
+            <h1 class="section-title">Our Premium Merchandise</h1>
+            <p class="results-count" id="resultsCount">Showing all 9 products</p>
+          </div>
+
+          <div id="productsContainer" class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card" data-category="wears" data-price="35">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" alt="Fitness T-Shirt" />
+                <span class="product-badge">Bestseller</span>
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Premium Fitness T-Shirt</h3>
+                <p class="product-description">Breathable, moisture-wicking fabric perfect for intense workouts. Available in multiple colors and sizes.</p>
+                <div class="product-footer">
+                  <span class="product-price">$35.00</span>
+                  <button class="buy-btn" data-product="Premium Fitness T-Shirt" data-price="35.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-category="wears" data-price="45">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=400&fit=crop" alt="Compression Shorts" />
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Athletic Compression Shorts</h3>
+                <p class="product-description">High-performance compression shorts for maximum support and comfort during training sessions.</p>
+                <div class="product-footer">
+                  <span class="product-price">$45.00</span>
+                  <button class="buy-btn" data-product="Athletic Compression Shorts" data-price="45.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-category="wears" data-price="55">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop" alt="Performance Hoodie" />
+                <span class="product-badge">New</span>
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Performance Hoodie</h3>
+                <p class="product-description">Comfortable hoodie with moisture-wicking technology. Perfect for warm-ups and cool-downs.</p>
+                <div class="product-footer">
+                  <span class="product-price">$55.00</span>
+                  <button class="buy-btn" data-product="Performance Hoodie" data-price="55.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" data-category="equipment" data-price="120">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?w=400&h=400&fit=crop" alt="Dumbbells" />
+                <span class="product-badge">Popular</span>
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Adjustable Dumbbells Set</h3>
+                <p class="product-description">Space-saving adjustable dumbbells ranging from 5-50 lbs. Perfect for home gym setups.</p>
+                <div class="product-footer">
+                  <span class="product-price">$120.00</span>
+                  <button class="buy-btn" data-product="Adjustable Dumbbells Set" data-price="120.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" data-category="equipment" data-price="85">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=400&fit=crop" alt="Resistance Bands" />
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Resistance Bands Set</h3>
+                <p class="product-description">Premium latex resistance bands with varying resistance levels. Includes carrying bag and door anchor.</p>
+                <div class="product-footer">
+                  <span class="product-price">$85.00</span>
+                  <button class="buy-btn" data-product="Resistance Bands Set" data-price="85.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card" data-category="equipment" data-price="25">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400&h=400&fit=crop" alt="Yoga Mat" />
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Yoga Mat Premium</h3>
+                <p class="product-description">Extra thick, non-slip yoga mat with excellent cushioning. Eco-friendly and durable material.</p>
+                <div class="product-footer">
+                  <span class="product-price">$25.00</span>
+                  <button class="buy-btn" data-product="Yoga Mat Premium" data-price="25.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card" data-category="accessories" data-price="15">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop" alt="Water Bottle" />
+                <span class="product-badge">Bestseller</span>
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Sports Water Bottle</h3>
+                <p class="product-description">1L capacity insulated water bottle. Keeps drinks cold for 24 hours. BPA-free and leak-proof.</p>
+                <div class="product-footer">
+                  <span class="product-price">$15.00</span>
+                  <button class="buy-btn" data-product="Sports Water Bottle" data-price="15.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card" data-category="accessories" data-price="30">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop" alt="Gym Bag" />
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Gym Bag Deluxe</h3>
+                <p class="product-description">Spacious gym bag with separate shoe compartment and multiple pockets. Water-resistant material.</p>
+                <div class="product-footer">
+                  <span class="product-price">$30.00</span>
+                  <button class="buy-btn" data-product="Gym Bag Deluxe" data-price="30.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card" data-category="accessories" data-price="18">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=400&fit=crop" alt="Headphones" />
+                <span class="product-badge">New</span>
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Wireless Sport Headphones</h3>
+                <p class="product-description">Sweat-resistant wireless earbuds with 8-hour battery life. Perfect for your workout playlist.</p>
+                <div class="product-footer">
+                  <span class="product-price">$18.00</span>
+                  <button class="buy-btn" data-product="Wireless Sport Headphones" data-price="18.00">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="noResults" class="no-results" style="display: none;">
+            <i class="fas fa-search"></i>
+            <p>No products found matching your criteria</p>
+            <button class="reset-filters-btn" id="resetFilters">
+              <i class="fas fa-redo"></i> Reset Filters
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <p>Team members: Danial & Yerkebulan</p>
+    </footer>
+
+    <button
+      class="theme-toggle-btn"
+      id="themeToggleBtn"
+      aria-label="Toggle theme"
+    >
+      🌙
+    </button>
+    <!-- Theme notification container -->
+    <div id="theme-notification" class="theme-notification"></div>
+    <audio id="notif-sound" src="sounds/notify1.wav" preload="auto"></audio>
+    <script src="theme-toggle.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scroll-progress.js"></script>
+    <script src="keyboard-nav.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="our-merches.js"></script>
+  </body>
+</html>

@@ -1,0 +1,311 @@
+/* Programs Page Styles */
+
+/*change for FINAL*/
+
+/*================= Side Bar ==============*/
+.layout-programs {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  grid-template-columns: 220px 1fr; /* sidebar + main content */
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+header { grid-area: header; }
+aside { grid-area: aside; background-color: #f4f4f4; padding: 20px; }
+main { grid-area: main; padding: 20px; }
+footer { grid-area: footer; }
+/* ============== Side Bar End==============*/
+
+
+/* ====== Greeting ====== */
+#greeting {
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 80px 20px;
+    text-align: center;
+    color: #1E293B;
+}
+
+
+/* ===== Card Row ===== */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;       /* wrap to next line if screen is small */
+    gap: 20px;             /* spacing between cards */
+    justify-content: center;
+    align-items: flex-start; /* ADD THIS - prevents cards from stretching */
+}
+
+/* Individual Card */
+.container {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* stack image + content vertically */
+    justify-content: space-between; /* push button to bottom */
+    align-items: center; /* center horizontally */
+    gap: 20px;
+    text-align: center;
+    background-color: white;
+    /*border: 1px solid #1E293B;*/
+    border-radius: 10px;
+    color: #1E293B;
+    max-width: 300px;  /* optional: equal width for all cards */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
+    align-self: flex-start; /* ADD THIS - each card controls its own height */
+}
+
+/* Hover effect for card */
+.container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Card content: h2, p, button */
+.card-content {
+    display: flex;
+    flex-direction: column; /* stack h2, p, button */
+    justify-content: space-between; /* button at bottom */
+    height: 100%; /* take full height of container */
+    gap: 10px; /* space between text and button */
+    text-align: left;
+}
+
+.card-content h2 {
+    text-align: center;
+    color: #1E293B;
+}
+
+.card-content .short-desc {
+    text-align: center;
+}
+
+/* Images inside cards */
+.trainingPrograms {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+}
+
+/* Button inside card */
+.card-content button {
+    background: #a21208;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for button */
+.card-content button:hover {
+    background: #2c36c0;
+}
+
+/* ========== FAQ Section ========== */
+.faq-section {
+  margin: 40px auto;
+  width: 80%;
+  max-width: 700px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-question {
+  background-color: #222;
+  color: #fff;
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.accordion-question:hover {
+  background-color: #444;
+}
+
+.accordion-content {
+  display: none;
+  padding: 15px;
+  background-color: #f8f8f8;
+  color: #333;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.accordion-question.active {
+  background-color: #870FB3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+#dateTime {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* ========== SEARCH BAR STYLES ========== */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    position: relative;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+#searchInput:focus {
+    border-color: #ff9800;
+}
+
+/* Autocomplete Dropdown */
+#autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 5px;
+}
+
+.autocomplete-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Highlight style for search results */
+.highlight {
+    background-color: #ffc400;
+    color: rgb(10, 4, 86);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* No results message */
+#noResults {
+    text-align: center;
+    font-size: 20px;
+    color: #999;
+    padding: 40px;
+    display: none;
+}
+
+/* More info section - hidden by default */
+.more-info {
+    margin-top: 10px;
+    text-align: left;
+    animation: fadeIn 0.4s ease-in-out;
+    display: none; /* ADD THIS - replaces inline style */
+}
+
+.more-info ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.more-info li {
+    margin-bottom: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Close button styling */
+.close-btn {
+    background: #a21208 !important;
+    display: none; /* ADD THIS - replaces inline style */
+}
+
+.close-btn:hover {
+    background: #2c36c0 !important;
+}
+
+.card-content {
+    text-align: left;
+}
+
+.card-content h2 {
+    text-align: center;
+}
+
+.card-content .short-desc {
+    text-align: center;
+}
+
+/* Night mode */
+body.night #greeting {
+    color: #ffd700;
+}
+
+body.night main {
+    background-color: black;
+    color: white;
+}
+
+body.night .container {
+    background-color: rgb(68, 65, 65);
+    color: white;
+    border: 1px solid white;
+}
+
+body.night .container h2 {
+    color: white;
+}
+
+body.night .accordion-question {
+    background-color: rgb(68, 65, 65);
+    color: #ffd700;
+}
+
+body.night .accordion-question:hover {
+    background-color: blue;
+}
+
+body.night .accordion-question.active {
+    background-color: #870FB3;
+}

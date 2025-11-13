@@ -1,0 +1,395 @@
+
+<!--index2.html (Home Page)-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eagle Fitness Club - Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+      <div id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="index2.html">
+            <img src="images/eagle.png" alt="Fitness Logo" />
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="our-merches.html">Our Merch</a></li>
+            <li><a href="gallery.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title">Quick Navigation</div>
+          <div class="sidebar-subtitle">Jump to Section</div>
+        </div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#home" class="active">
+              <i class="fas fa-arrow-up"></i> Top
+            </a>
+          </li>
+          <li>
+            <a href="#about">
+              <i class="fas fa-info-circle"></i> About
+            </a>
+          </li>
+          <li>
+            <a href="#stats">
+              <i class="fas fa-chart-line"></i> Stats
+            </a>
+          </li>
+          <li>
+            <a href="#gallery">
+              <i class="fas fa-images"></i> Gallery
+            </a>
+          </li>
+          <li>
+            <a href="#advantages">
+              <i class="fas fa-star"></i> Advantages
+            </a>
+          </li>
+          <li>
+            <a href="#why-choose">
+              <i class="fas fa-check-circle"></i> Why Us
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Sidebar Toggle Button -->
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+          <div class="hero-content">
+            <h1>Transform Your Body, Transform Your Life</h1>
+            <p>
+              Join the ultimate fitness community and achieve your goals with
+              expert trainers, state-of-the-art equipment, and personalized
+              programs
+            </p>
+            <a href="#" class="cta-button">Start Your Journey</a>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+          <div class="container-of-home">
+            <h2 class="section-title">Welcome to Eagle Fitness Club</h2>
+            <p class="section-subtitle">
+              At Eagle Fitness Club, we believe fitness is more than just a
+              workout—it's a lifestyle. Our state-of-the-art facility offers
+              everything you need to reach your fitness goals, from cutting-edge
+              equipment and diverse training programs to expert guidance from
+              certified trainers. Whether you're a beginner taking your first
+              steps or an experienced athlete pushing your limits, we provide a
+              supportive and motivating environment where everyone can thrive.
+              Join our community and discover what your body is truly capable of
+              achieving.
+            </p>
+          </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section" id="stats">
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-icon"><i class="fas fa-users"></i></div>
+              <span class="stat-number" data-target="1500">0</span>
+              <div class="stat-label">Active Members</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon"><i class="fas fa-dumbbell"></i></div>
+              <span class="stat-number" data-target="25">0</span>
+              <div class="stat-label">Training Programs</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+              <span class="stat-number" data-target="98">0</span>
+              <div class="stat-label">Success Rate %</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+          <div class="container-of-home">
+            <h2 class="section-title">Our Facility</h2>
+            <p class="section-subtitle">
+              Take a virtual tour through our world-class fitness center
+            </p>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                class="lazy-image"
+                data-src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop"
+                alt="Gym Equipment"
+              />
+              <div class="gallery-overlay">
+                <h3>State-of-the-Art Equipment</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                class="lazy-image"
+                data-src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop"
+                alt="Group Training"
+              />
+              <div class="gallery-overlay">
+                <h3>Group Training Sessions</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                class="lazy-image"
+                data-src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop"
+                alt="Cardio Zone"
+              />
+              <div class="gallery-overlay">
+                <h3>Premium Cardio Zone</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                class="lazy-image"
+                data-src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&h=400&fit=crop"
+                alt="Personal Training"
+              />
+              <div class="gallery-overlay">
+                <h3>Personal Training Area</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                class="lazy-image"
+                data-src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&h=400&fit=crop"
+                alt="Yoga Studio"
+              />
+              <div class="gallery-overlay">
+                <h3>Yoga & Meditation Studio</h3>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                class="lazy-image"
+                data-src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=600&h=400&fit=crop"
+                alt="Locker Rooms"
+              />
+              <div class="gallery-overlay">
+                <h3>Luxury Locker Rooms</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Advantages Section -->
+        <section class="advantages-section" id="advantages">
+          <div class="container-of-home">
+            <h2 class="section-title">Why Eagle Fitness Club Stands Out</h2>
+            <p class="section-subtitle">
+              Experience the difference that makes us the premier fitness
+              destination
+            </p>
+          </div>
+          <div class="advantages-grid">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <h3>Expert Trainers</h3>
+              <p>
+                Our certified professionals bring years of experience and
+                personalized attention to help you achieve your goals safely and
+                effectively.
+              </p>
+            </div>
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3>Flexible Schedule</h3>
+              <p>
+                Open 24/7 to fit your busy lifestyle. Work out whenever it's
+                convenient for you, day or night.
+              </p>
+            </div>
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <h3>Premium Equipment</h3>
+              <p>
+                Train with the latest and most advanced fitness equipment from
+                top brands, regularly maintained and updated.
+              </p>
+            </div>
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3>Community Support</h3>
+              <p>
+                Join a motivating community of like-minded individuals who
+                support and inspire each other every step of the way.
+              </p>
+            </div>
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-spa"></i>
+              </div>
+              <h3>Wellness Programs</h3>
+              <p>
+                Beyond fitness, we offer nutrition counseling, recovery sessions,
+                and wellness workshops for holistic health.
+              </p>
+            </div>
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Mobile App Access</h3>
+              <p>
+                Track your progress, book classes, and stay connected with our
+                community through our innovative mobile app.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section" id="why-choose">
+          <div class="why-choose-content">
+            <div class="why-choose-image">
+              <img
+                class="lazy-image"
+                data-src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop"
+                alt="Why Choose Us"
+              />
+            </div>
+            <div class="why-choose-text">
+              <h2>Why Choose Us?</h2>
+              <p>
+                We're not just a gym—we're your partner in achieving a
+                healthier, stronger, and more confident you. Our commitment to
+                excellence and member satisfaction sets us apart from the rest.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-check-circle"></i> Personalized fitness plans
+                  tailored to your goals
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Small group classes for
+                  maximum attention
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Clean, spacious, and
+                  well-maintained facilities
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Affordable membership plans
+                  with no hidden fees
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Free fitness assessment and
+                  goal-setting session
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Access to exclusive
+                  workshops and events
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Professional nutrition and
+                  lifestyle coaching
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Results-driven approach with
+                  proven success
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+          <div class="container-of-home">
+            <h2>Ready to Start Your Fitness Journey?</h2>
+            <p>
+              Join thousands of members who have transformed their lives at Eagle
+              Fitness Club
+            </p>
+            <a href="#" class="cta-button-white">Get Started Today</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Team members: Danial & Yerkebulan</p>
+    </footer>
+
+    <button
+      class="theme-toggle-btn"
+      id="themeToggleBtn"
+      aria-label="Toggle theme"
+    >
+      🌙
+    </button>
+    <!-- Theme notification container -->
+    <div id="theme-notification" class="theme-notification"></div>
+    <audio id="notif-sound" src="sounds/notify1.wav" preload="auto"></audio>
+    <script src="theme-toggle.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scroll-progress.js"></script>
+    <script src="keyboard-nav.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="index2.js"></script>
+    <script src="menu-toggle.js"></script>
+  </body>
+</html>

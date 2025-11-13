@@ -1,0 +1,215 @@
+/* Trainers Page Styles */
+.meet-trainers {
+    padding: 80px 20px;
+    text-align: center;
+    color: #1E293B;
+}
+
+
+.trainers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.trainer-card-wrapper {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.trainer-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 250px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    /* transform: translateY(20px) scale(1); 
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards; */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* smooth scaling */
+}
+
+
+.trainer-card:hover {
+    transform: scale(1.1); /* bigger scale */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.trainer-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+.trainer-card h3 {
+    margin: 15px 0 5px;
+    font-size: 1.2rem;
+}
+
+.trainer-card p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Learn More Button */
+.trainer-card button {
+    background: #a21208;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+.trainer-card button:hover {
+    background-color: #2c36c0;
+}
+
+.trainer-more-info {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #334155;
+  background-color: #f1f5f9;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+
+
+
+/* may cause conflict
+
+.card-row .container:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s ease; 
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+*/
+
+
+/* Star Rating Styles */
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 8px 0;
+}
+
+.star-rating i {
+  font-size: 1.5rem;
+  color: gold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.star-rating i:hover {
+  transform: scale(1.2);
+}
+
+
+/*Show current time */
+.show-time {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#showTimeBtn {
+  background-color: #06557A;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#showTimeBtn:hover {
+  background-color: #9014A9;
+  scale: 1.1;
+}
+
+#currentTime {
+  display: none;
+  margin: 15px auto 0;
+  font-size: 18px;
+  color: #1E293B;
+  border: 2px solid #1E293B;
+  border-radius: 8px;
+  padding: 10px 15px;
+  width: fit-content;
+}
+
+
+.theme-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(50, 50, 50, 0.9);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.theme-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/*Night mode*/
+body.night #showTimeBtn {
+    border: 2px solid #fff;
+}
+
+body.night main {
+    background-color: black;
+    color: white;
+}
+
+body.night .meet-trainers p,
+body.night .meet-trainers h2,
+body.night .trainer-card p,
+body.night .trainer-card h3 {
+    color: white;
+}
+
+body.night .trainer-card {
+    background: rgb(68, 65, 65);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+body.night .trainer-more-info {
+    background-color: rgb(40, 38, 38);
+    color: #f1f5f9;
+}

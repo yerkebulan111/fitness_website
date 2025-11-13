@@ -1,0 +1,124 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Club - Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+      <div id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="index2.html">
+            <img src="images/eagle.png" alt="Fitness Logo" />
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="our-merches.html">Our Merch</a></li>
+            <li><a href="gallery.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Contact Us</h2>
+      <p>
+        Have questions? Reach out to us using the details below or send us a
+        message.
+      </p>
+
+      <section>
+        <h3>Our Address</h3>
+        <p>Astana IT University, Mangilik El Avenue, Astana, Kazakhstan</p>
+
+        <p>
+          Phone: <span id="clubPhone">+7 (777) 991-4648</span>
+          <button id="copyPhone" class="copy-btn">Copy</button>
+        </p>
+
+        <p>
+          Email: <span id="clubEmail">info@EagleFitnessClub.kz</span>
+          <button id="copyEmail" class="copy-btn">Copy</button>
+        </p>
+      </section>
+
+      <section>
+        <h3>Send us a Message</h3>
+        <form id="contactForm">
+          <label for="name">Your Name:</label><br />
+          <input type="text" id="name" name="name" required /><br /><br />
+
+          <label for="email">Your Email:</label><br />
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message" rows="5" required></textarea
+          ><br /><br />
+
+          <button type="submit">Send</button>
+        </form>
+
+        <p
+          id="successMessage"
+          style="color: green; display: none; font-weight: bold"
+        >
+          ✅ Message sent successfully!
+        </p>
+      </section>
+
+      <!-- Notification -->
+      <div id="theme-notification" class="theme-notification"></div>
+      <audio
+        id="notif-sound"
+        src="sounds/gaminglock.wav"
+        preload="auto"
+      ></audio>
+    </main>
+
+    <footer>
+      <p>Team Members: Danial & Yerkebulan</p>
+    </footer>
+
+    <button
+      class="theme-toggle-btn"
+      id="themeToggleBtn"
+      aria-label="Toggle theme"
+    >
+      🌙
+    </button>
+    <!-- Theme notification container -->
+    <div id="theme-notification" class="theme-notification"></div>
+    <audio id="notif-sound" src="sounds/notify1.wav" preload="auto"></audio>
+    <script src="theme-toggle.js"></script>
+    <script src="contact.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scroll-progress.js"></script>
+    <script src="keyboard-nav.js"></script>
+  </body>
+</html>
