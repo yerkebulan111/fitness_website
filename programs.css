@@ -276,3 +276,38 @@ footer { grid-area: footer; }
 #greeting.night {
     color: #ffd700;
 }
+
+
+
+/* API */
+
+
+
+main {
+    display: flex;
+    justify-content: center; /* по горизонтали */
+    align-items: center;     /* по вертикали */
+    flex-direction: column;  /* если будут другие элементы сверху/снизу */
+    min-height: calc(100vh - 60px); /* чтобы учитывать header/footer */
+}
+
+
+
+#nutrition-section {
+    background-color: #1E293B;;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    border: 2px solid #fff;
+
+}
+
+
+  #nutrition-section h2 {
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+
+  
