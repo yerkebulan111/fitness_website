@@ -759,3 +759,90 @@ body.night .product-content .product-description
 {
   color: white;
 }
+
+/* Category Filter - Better mobile layout */
+@media (max-width: 768px) {
+  .category-filter {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 20px;
+  }
+
+  .category-btn {
+    flex: 1 1 calc(50% - 4px); /* 2 buttons per row */
+    min-width: 140px;
+    padding: 15px 10px;
+    font-size: 13px;
+  }
+
+  .category-btn i {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-btn {
+    flex: 1 1 100%; /* Full width on very small screens */
+    min-width: 100%;
+  }
+}
+
+/* Product Grid - Better mobile responsiveness */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .filter-system {
+    padding: 15px;
+  }
+
+  main {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    max-width: 100%;
+  }
+
+  .product-image {
+    height: 250px;
+  }
+}
+
+/* Special fixes for 320px */
+@media (max-width: 320px) {
+  .filter-system {
+    padding: 10px;
+  }
+
+  .category-btn {
+    padding: 12px 8px;
+    font-size: 12px;
+    min-width: 100%;
+  }
+
+  .category-btn i {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .product-title {
+    font-size: 18px;
+  }
+
+  .product-price {
+    font-size: 24px;
+  }
+
+  .buy-btn {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}

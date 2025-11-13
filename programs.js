@@ -95,194 +95,190 @@ document.addEventListener("DOMContentLoaded", () => {
   displayGreeting();
 });
 
-
 // ===== JQuery Search Functionality =====
 
-$(document).ready(function() {
-    
-    // Program names for autocomplete
-    const programNames = [
-        "Cardio Training",
-        "Strength Training",
-        "Yoga & Flexibility",
-        "Swimming Pool Program",
-        "Martial Arts",
-        "HIIT Training",
-        "Pilates",
-        "CrossFit",
-        "Dance Fitness"
-    ];
+$(document).ready(function () {
+  // Program names for autocomplete
+  const programNames = [
+    "Cardio Training",
+    "Strength Training",
+    "Yoga & Flexibility",
+    "Swimming Pool Program",
+    "Martial Arts",
+    "HIIT Training",
+    "Pilates",
+    "CrossFit",
+    "Dance Fitness",
+  ];
 
-    // Real-time Search and Live Filter
-    $('#searchInput').on('keyup', function() {
-        const searchTerm = $(this).val().toLowerCase().trim();
+  // Real-time Search and Live Filter
+  $("#searchInput").on("keyup", function () {
+    const searchTerm = $(this).val().toLowerCase().trim();
 
-        // to remove previous highlights
-        removeHighlights();
+    // to remove previous highlights
+    removeHighlights();
 
-        if (searchTerm === '') {
-            // Show all cards if search is empty
-            $('.container').show();
-            $('#noResults').hide();
-            $('#autocomplete').hide();
-            return;
-        }
-
-        let visibleCount = 0;
-
-        // to filter cards
-        $('.container').filter(function() {
-            const programData = $(this).attr('data-program');
-            const cardText = $(this).text().toLowerCase();
-            const matches = programData.includes(searchTerm) || cardText.includes(searchTerm);
-            
-            $(this).toggle(matches);
-            
-            if (matches) {
-                visibleCount++;
-                // to highlight matching text in visible cards
-                highlightText($(this), searchTerm);
-            }
-            
-            return matches;
-        });
-
-        // show/hide "no results" message
-        if (visibleCount === 0) {
-            $('#noResults').show();
-        } else {
-            $('#noResults').hide();
-        }
-
-        // to highlight in FAQ section
-        highlightInFAQ(searchTerm);
-    });
-
-    // AUTOCOMPLETE SEARCH SUGGESTIONS 
-    $('#searchInput').on('input', function() {
-        const searchTerm = $(this).val().toLowerCase().trim();
-        const $autocomplete = $('#autocomplete');
-
-        if (searchTerm === '') {
-            $autocomplete.hide();
-            return;
-        }
-
-        // to filter matching program names
-        const matches = programNames.filter(function(program) {
-            return program.toLowerCase().includes(searchTerm);
-        });
-
-        if (matches.length > 0) {
-            // to build autocomplete dropdown
-            $autocomplete.empty();
-            
-            matches.forEach(function(program) {
-                const $item = $('<div class="autocomplete-item"></div>').text(program);
-                
-                // to click handler for autocomplete item
-                $item.on('click', function() {
-                    $('#searchInput').val(program);
-                    $autocomplete.hide();
-                    $('#searchInput').trigger('keyup'); // trigger search
-                });
-                
-                $autocomplete.append($item);
-            });
-            
-            $autocomplete.show();
-        } else {
-            $autocomplete.hide();
-        }
-    });
-
-    // to hide autocomplete when clicking outside
-    $(document).on('click', function(e) {
-        if (!$(e.target).closest('.search-container').length) {
-            $('#autocomplete').hide();
-        }
-    });
-
-    // SEARCH HIGHLIGHTING 
-    function highlightText($element, searchTerm) {
-        // to highlight in h2 and p tags within the card (but not in more-info)
-        $element.find('h2, .short-desc').each(function() {
-            const $this = $(this);
-            let html = $this.html();
-            
-            //to remove existing highlights first
-            html = html.replace(/<span class="highlight">(.*?)<\/span>/gi, '$1');
-            
-            // to create regex for case-insensitive search
-            const regex = new RegExp(`(${escapeRegex(searchTerm)})`, 'gi');
-            
-            // to wrap matches in highlight span
-            html = html.replace(regex, '<span class="highlight">$1</span>');
-            
-            $this.html(html);
-        });
+    if (searchTerm === "") {
+      // Show all cards if search is empty
+      $(".container").show();
+      $("#noResults").hide();
+      $("#autocomplete").hide();
+      return;
     }
 
-    function highlightInFAQ(searchTerm) {
-        $('.accordion-question, .accordion-content p').each(function() {
-            const $this = $(this);
-            let html = $this.html();
-            
-            // to remove existing highlights
-            html = html.replace(/<span class="highlight">(.*?)<\/span>/gi, '$1');
-            
-            if (searchTerm) {
-                const regex = new RegExp(`(${escapeRegex(searchTerm)})`, 'gi');
-                html = html.replace(regex, '<span class="highlight">$1</span>');
-            }
-            
-            $this.html(html);
-        });
-    }
+    let visibleCount = 0;
 
-    function removeHighlights() {
-        $('.highlight').each(function() {
-            $(this).replaceWith($(this).text());
-        });
-    }
+    // to filter cards
+    $(".container").filter(function () {
+      const programData = $(this).attr("data-program");
+      const cardText = $(this).text().toLowerCase();
+      const matches =
+        programData.includes(searchTerm) || cardText.includes(searchTerm);
 
-    // to escape special regex characters
-    function escapeRegex(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
+      $(this).toggle(matches);
 
-    //  LEARN MORE / CLOSE FUNCTIONALITY 
-    $('.learn-more-btn').on('click', function() {
-        const $card = $(this).closest('.container');
-        const $moreInfo = $card.find('.more-info');
-        const $learnMoreBtn = $(this);
-        const $closeBtn = $card.find('.close-btn');
+      if (matches) {
+        visibleCount++;
+        // to highlight matching text in visible cards
+        highlightText($(this), searchTerm);
+      }
 
-        // to show more info with animation
-        $moreInfo.slideDown(400);
-        
-        // to hide "Learn More" button and show "Close" button
-        $learnMoreBtn.hide();
-        $closeBtn.show();
+      return matches;
     });
 
-    $('.close-btn').on('click', function() {
-        const $card = $(this).closest('.container');
-        const $moreInfo = $card.find('.more-info');
-        const $learnMoreBtn = $card.find('.learn-more-btn');
-        const $closeBtn = $(this);
+    // show/hide "no results" message
+    if (visibleCount === 0) {
+      $("#noResults").show();
+    } else {
+      $("#noResults").hide();
+    }
 
-        // to hide more info with animation
-        $moreInfo.slideUp(400);
-        
-        // tp show "Learn More" button and hide "Close" button
-        $closeBtn.hide();
-        $learnMoreBtn.show();
+    // to highlight in FAQ section
+    highlightInFAQ(searchTerm);
+  });
+
+  // AUTOCOMPLETE SEARCH SUGGESTIONS
+  $("#searchInput").on("input", function () {
+    const searchTerm = $(this).val().toLowerCase().trim();
+    const $autocomplete = $("#autocomplete");
+
+    if (searchTerm === "") {
+      $autocomplete.hide();
+      return;
+    }
+
+    // to filter matching program names
+    const matches = programNames.filter(function (program) {
+      return program.toLowerCase().includes(searchTerm);
     });
 
+    if (matches.length > 0) {
+      // to build autocomplete dropdown
+      $autocomplete.empty();
+
+      matches.forEach(function (program) {
+        const $item = $('<div class="autocomplete-item"></div>').text(program);
+
+        // to click handler for autocomplete item
+        $item.on("click", function () {
+          $("#searchInput").val(program);
+          $autocomplete.hide();
+          $("#searchInput").trigger("keyup"); // trigger search
+        });
+
+        $autocomplete.append($item);
+      });
+
+      $autocomplete.show();
+    } else {
+      $autocomplete.hide();
+    }
+  });
+
+  // to hide autocomplete when clicking outside
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".search-container").length) {
+      $("#autocomplete").hide();
+    }
+  });
+
+  // SEARCH HIGHLIGHTING
+  function highlightText($element, searchTerm) {
+    // to highlight in h2 and p tags within the card (but not in more-info)
+    $element.find("h2, .short-desc").each(function () {
+      const $this = $(this);
+      let html = $this.html();
+
+      //to remove existing highlights first
+      html = html.replace(/<span class="highlight">(.*?)<\/span>/gi, "$1");
+
+      // to create regex for case-insensitive search
+      const regex = new RegExp(`(${escapeRegex(searchTerm)})`, "gi");
+
+      // to wrap matches in highlight span
+      html = html.replace(regex, '<span class="highlight">$1</span>');
+
+      $this.html(html);
+    });
+  }
+
+  function highlightInFAQ(searchTerm) {
+    $(".accordion-question, .accordion-content p").each(function () {
+      const $this = $(this);
+      let html = $this.html();
+
+      // to remove existing highlights
+      html = html.replace(/<span class="highlight">(.*?)<\/span>/gi, "$1");
+
+      if (searchTerm) {
+        const regex = new RegExp(`(${escapeRegex(searchTerm)})`, "gi");
+        html = html.replace(regex, '<span class="highlight">$1</span>');
+      }
+
+      $this.html(html);
+    });
+  }
+
+  function removeHighlights() {
+    $(".highlight").each(function () {
+      $(this).replaceWith($(this).text());
+    });
+  }
+
+  // to escape special regex characters
+  function escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  //  LEARN MORE / CLOSE FUNCTIONALITY
+  $(".learn-more-btn").on("click", function () {
+    const $card = $(this).closest(".container");
+    const $moreInfo = $card.find(".more-info");
+    const $learnMoreBtn = $(this);
+    const $closeBtn = $card.find(".close-btn");
+
+    // to show more info with animation
+    $moreInfo.slideDown(400);
+
+    // to hide "Learn More" button and show "Close" button
+    $learnMoreBtn.hide();
+    $closeBtn.show();
+  });
+
+  $(".close-btn").on("click", function () {
+    const $card = $(this).closest(".container");
+    const $moreInfo = $card.find(".more-info");
+    const $learnMoreBtn = $card.find(".learn-more-btn");
+    const $closeBtn = $(this);
+
+    // to hide more info with animation
+    $moreInfo.slideUp(400);
+
+    // tp show "Learn More" button and hide "Close" button
+    $closeBtn.hide();
+    $learnMoreBtn.show();
+  });
 });
-
-
 
 // === Day/Night Theme Toggle with Local Storage ===
 // document.addEventListener("DOMContentLoaded", () => {
@@ -293,7 +289,7 @@ $(document).ready(function() {
 
 //   // check local storage on page load
 //   const savedTheme = localStorage.getItem('theme');
-  
+
 //   if (savedTheme === 'night') {
 //     document.body.classList.add("night");
 //     themeToggle.textContent = "☀️";
@@ -328,18 +324,56 @@ $(document).ready(function() {
 //       themeToggle.textContent = "☀️";
 //       showNotification("🌙 Night Mode Activated");
 //       greetingElement.classList.add("night");
-      
+
 //       // save to local storage
 //       localStorage.setItem('theme', 'night');
-      
+
 //     } else {
 //       themeToggle.textContent = "🌙";
 //       showNotification("☀️ Day Mode Activated");
 //       greetingElement.classList.remove("night");
-      
+
 //       // save to local storage
 //       localStorage.setItem('theme', 'day');
 //     }
 //   });
 
 // });
+
+
+// ========== Track Food ================
+document.getElementById("check-btn").addEventListener("click", async () => {
+  const food = document.getElementById("food-input").value.trim();
+  if (!food) return alert("Please enter a food name.");
+
+  const apiUrl = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(
+    food
+  )}&search_simple=1&action=process&json=1`;
+  const resultDiv = document.getElementById("nutrition-result");
+
+  resultDiv.textContent = "Loading...";
+
+  try {
+    const res = await fetch(apiUrl);
+    const data = await res.json();
+
+    if (data.products && data.products.length > 0) {
+      const item = data.products[0];
+      const nutriments = item.nutriments || {};
+
+      resultDiv.innerHTML = `
+                  <p><strong>${
+                    item.product_name || food
+                  }</strong> contains approximately:</p>
+                  <p>Calories: ${nutriments["energy-kcal"] || "N/A"} kcal</p>
+                  <p>Protein: ${nutriments.proteins || "N/A"} g</p>
+                  <p>Fat: ${nutriments.fat || "N/A"} g</p>
+                  <p>Carbs: ${nutriments.carbohydrates || "N/A"} g</p>
+                `;
+    } else {
+      resultDiv.textContent = "Food not found. Try another item.";
+    }
+  } catch (error) {
+    resultDiv.textContent = "Error fetching data. Please try again.";
+  }
+});

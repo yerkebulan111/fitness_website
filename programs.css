@@ -317,3 +317,132 @@ body.night .accordion-question {
     color: #fff;
     margin-bottom: 15px;
   }
+
+
+  /* Gallery Responsive - Tablets */
+@media (max-width: 1024px) {
+  .gallery1 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .gallery1-item img {
+    height: 220px;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Gallery Responsive - Mobile */
+@media (max-width: 768px) {
+  .gallery1 {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .gallery1-item img {
+    height: 300px;
+  }
+
+  .stats-section {
+    padding: 40px 15px;
+  }
+
+  .stats-title {
+    font-size: 32px;
+  }
+
+  .stats-subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .stat-icon {
+    font-size: 40px;
+  }
+}
+
+/* Gallery Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .gallery1 {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .gallery1-item img {
+    height: 250px;
+  }
+
+  .gallery1-item span {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .stat-box {
+    padding: 20px 15px;
+  }
+
+  .stats-title {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+}
+
+/* Gallery - 320px specific */
+@media (max-width: 320px) {
+  .gallery1 {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .gallery1-item img {
+    height: 200px;
+  }
+
+  .stats-section {
+    padding: 30px 10px;
+    margin: 30px auto;
+  }
+
+  .stats-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .stats-subtitle {
+    font-size: 14px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .stat-number::after {
+    font-size: 24px;
+  }
+
+  .stat-icon {
+    font-size: 36px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+  }
+}
