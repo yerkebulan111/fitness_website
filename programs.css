@@ -301,3 +301,19 @@ body.night .accordion-question {
     background-color: rgb(68, 65, 65);
     color: #ffd700;
 }
+
+
+#nutrition-section {
+    background-color: #1E293B;;
+    padding: 30px;
+    border-radius: 10px;
+    /* width: px; */
+    margin: 50px auto;
+
+}
+
+
+  #nutrition-section h2 {
+    color: #fff;
+    margin-bottom: 15px;
+  }
